@@ -272,10 +272,11 @@ function main(argv){
   }
   const {flags,pos}=parseFlags(rest);
   if(cmd==="patterns"||cmd==="components"){
+    assert(pos.length===0,"Unexpected positional argument for "+cmd);
     const items=cmd==="patterns"?data.patterns:needs.needs;
     const rows=items.filter(x=>!flags.genre||x.genre===flags.genre);
     if(flags.json)return console.log(JSON.stringify(rows,null,2));
-    rows.forEach(x=>console.log(x.id+" | "+x.name||x.label));
+    rows.forEach(x=>console.log(x.id+" | "+(x.name||x.label)));
     return;
   }
   if(cmd==="shortlist"){

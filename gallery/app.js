@@ -126,7 +126,7 @@ function renderPreview(pattern,interactive=false){
   const form=make("div","demo-form");
   const title=make("label",null,"Project title");
   const input=make(interactive?"input":"div",interactive?"":"demo-placeholder",interactive?undefined:"Research board");
-  if(interactive){input.id="form-"+pattern.id;title.htmlFor=input.id;input.value="Research board";}
+  if(interactive){input.value="Research board";}
   title.appendChild(input);
   const row=make("label","demo-checkbox");
   if(interactive){
