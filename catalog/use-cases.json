@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "use_cases": [
+    {
+      "id": "ai-chat",
+      "label": "AI chat interface",
+      "objective": "Readable conversation, reliable keyboard navigation, low-motion and loading states.",
+      "preferred_stack": [
+        "react",
+        "typescript"
+      ],
+      "source_ids": [
+        "shadcn-ui",
+        "radix-primitives",
+        "morphin",
+        "lucide"
+      ],
+      "checks": [
+        "Keyboard navigation",
+        "Responsive width",
+        "Clear sending / loading / failed states",
+        "Reduced motion"
+      ]
+    },
+    {
+      "id": "agent-workflow",
+      "label": "AI agent / pipeline visualization",
+      "objective": "Make agent-to-agent work observable without obscuring status or failures.",
+      "preferred_stack": [
+        "react",
+        "typescript"
+      ],
+      "source_ids": [
+        "designpass",
+        "shadcn-ui",
+        "storybook"
+      ],
+      "checks": [
+        "Legible node labels",
+        "Keyboard alternatives to drag",
+        "Visible connection status",
+        "No expensive animation on every frame"
+      ]
+    },
+    {
+      "id": "dashboard",
+      "label": "Research dashboard",
+      "objective": "Prioritize data density, filtering and status over decorative effects.",
+      "preferred_stack": [
+        "react",
+        "typescript"
+      ],
+      "source_ids": [
+        "shadcn-ui",
+        "radix-primitives",
+        "scrollx-ui",
+        "toggle-supply"
+      ],
+      "checks": [
+        "Readable tables and charts",
+        "No hidden critical indicators",
+        "Responsive panels",
+        "Respect source restrictions"
+      ]
+    },
+    {
+      "id": "micro-interactions",
+      "label": "Motion and feedback",
+      "objective": "Add meaningful motion only to transitions or status feedback.",
+      "preferred_stack": [
+        "react"
+      ],
+      "source_ids": [
+        "tween-ui",
+        "magic-ui",
+        "motion-primitives",
+        "react-bits"
+      ],
+      "checks": [
+        "Reduced motion",
+        "Animation does not mask errors",
+        "Low CPU/GPU impact",
+        "Avoid stacking animation libraries"
+      ]
+    },
+    {
+      "id": "javafx-desktop",
+      "label": "JavaFX desktop tool",
+      "objective": "Modernize native desktop UI without rewriting its runtime as a website.",
+      "preferred_stack": [
+        "javafx",
+        "java"
+      ],
+      "source_ids": [
+        "atlantafx",
+        "lucide",
+        "dtcg"
+      ],
+      "checks": [
+        "JavaFX native integration",
+        "Theme contrast",
+        "Keep functional behavior unchanged"
+      ]
+    },
+    {
+      "id": "design-system",
+      "label": "Shared visual language",
+      "objective": "Reusable typography, spacing, colors, icons and accessibility conventions across projects.",
+      "preferred_stack": [
+        "cross-platform"
+      ],
+      "source_ids": [
+        "dtcg",
+        "lucide",
+        "shadcn-ui",
+        "radix-primitives"
+      ],
+      "checks": [
+        "Semantic tokens",
+        "Light / dark parity",
+        "Contrast and focus states",
+        "Per-platform adapters"
+      ]
+    },
+    {
+      "id": "gallery",
+      "label": "Design research gallery",
+      "objective": "Browse examples and preview only original or explicitly authorized visual assets.",
+      "preferred_stack": [
+        "web"
+      ],
+      "source_ids": [
+        "storybook",
+        "morphin",
+        "21st-dev"
+      ],
+      "checks": [
+        "Source attribution",
+        "Image reuse permission",
+        "No remote-code execution",
+        "Fast filtering"
+      ]
+    }
+  ]
+}

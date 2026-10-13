@@ -1,0 +1,24 @@
+name: Validate design catalog
+on:
+  push:
+    paths:
+      - 'catalog/**'
+      - 'tools/catalog.mjs'
+      - '.github/workflows/catalog.yml'
+  pull_request:
+    paths:
+      - 'catalog/**'
+      - 'tools/catalog.mjs'
+      - '.github/workflows/catalog.yml'
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tools/catalog.mjs validate
+      - run: node tools/catalog.mjs self-test

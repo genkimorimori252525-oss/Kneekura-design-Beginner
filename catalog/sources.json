@@ -1,0 +1,417 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-13",
+  "sources": [
+    {
+      "id": "morphin",
+      "name": "Morphin",
+      "kind": "inspiration",
+      "website": "https://morphin.dev/",
+      "repository": "https://github.com/sikkeep/morphin-registry",
+      "stack": [
+        "react",
+        "typescript",
+        "tailwindcss"
+      ],
+      "tags": [
+        "inspiration",
+        "chat",
+        "animation",
+        "gallery"
+      ],
+      "license": {
+        "state": "unverified",
+        "label": "Registry has no LICENSE",
+        "evidence": "https://github.com/sikkeep/morphin-registry"
+      },
+      "adoption": "reference-only",
+      "notes": "Gallery of real interfaces plus an installable React registry. Public registry does not provide a LICENSE; do not mirror source or media.",
+      "verified_on": "2026-10-13"
+    },
+    {
+      "id": "viora-ui",
+      "name": "Viora UI",
+      "kind": "components",
+      "website": "https://www.vioraui.dedyn.io/",
+      "repository": "https://github.com/Kartikmhatre/VioraUI",
+      "stack": [
+        "react",
+        "typescript",
+        "tailwindcss",
+        "motion"
+      ],
+      "tags": [
+        "animation",
+        "controls",
+        "landing"
+      ],
+      "license": {
+        "state": "unverified",
+        "label": "No repository LICENSE verified",
+        "evidence": "https://github.com/Kartikmhatre/VioraUI"
+      },
+      "adoption": "reference-only",
+      "notes": "Website advertises copy-paste components and Pro templates; public repository is README-only at review time. Validate rights per item.",
+      "verified_on": "2026-10-13"
+    },
+    {
+      "id": "tween-ui",
+      "name": "Tween UI",
+      "kind": "components",
+      "website": "https://tween-ui.vercel.app/",
+      "repository": "https://github.com/StaticMania/tween-ui",
+      "stack": [
+        "react",
+        "typescript",
+        "tailwindcss",
+        "gsap"
+      ],
+      "tags": [
+        "animation",
+        "controls",
+        "landing",
+        "accessibility"
+      ],
+      "license": {
+        "state": "permissive_verified",
+        "label": "MIT",
+        "evidence": "https://github.com/StaticMania/tween-ui/blob/main/LICENSE"
+      },
+      "adoption": "review-upstream",
+      "notes": "Individual source-copy components; motion-reduction behavior is explicitly documented. Check GSAP and other runtime dependencies.",
+      "verified_on": "2026-10-13"
+    },
+    {
+      "id": "scrollx-ui",
+      "name": "ScrollX UI",
+      "kind": "components",
+      "website": "https://scrollxui.dev/",
+      "repository": "https://github.com/Adityakishore0/ScrollX-UI",
+      "stack": [
+        "react",
+        "typescript",
+        "tailwindcss",
+        "motion"
+      ],
+      "tags": [
+        "animation",
+        "dashboard",
+        "controls",
+        "landing"
+      ],
+      "license": {
+        "state": "restricted",
+        "label": "Modified MIT + Commons Clause / redistribution and competing-library restrictions",
+        "evidence": "https://github.com/Adityakishore0/ScrollX-UI/blob/main/LICENSE.md"
+      },
+      "adoption": "reference-only",
+      "notes": "README calls it MIT, but full LICENSE restricts redistribution in component libraries, templates and UI kits. Do not mirror, port as a library, or package components.",
+      "verified_on": "2026-10-13"
+    },
+    {
+      "id": "toggle-supply",
+      "name": "Toggle Supply",
+      "kind": "components",
+      "website": "https://toggle.supply/",
+      "repository": "https://github.com/jaretpeerson/toggleSupply",
+      "stack": [
+        "html",
+        "css",
+        "javascript",
+        "gsap"
+      ],
+      "tags": [
+        "css-first",
+        "animation",
+        "controls"
+      ],
+      "license": {
+        "state": "permissive_verified",
+        "label": "MIT",
+        "evidence": "https://github.com/jaretpeerson/toggleSupply/blob/main/LICENSE"
+      },
+      "adoption": "review-upstream",
+      "notes": "Framework-independent, CSS-first examples. Check individual component dependencies.",
+      "verified_on": "2026-10-13"
+    },
+    {
+      "id": "designpass",
+      "name": "DesignPass",
+      "kind": "components",
+      "website": "https://www.designpass.dev/",
+      "repository": "https://github.com/pixelsage/DesignPass.dev",
+      "stack": [
+        "react",
+        "typescript",
+        "shadcn"
+      ],
+      "tags": [
+        "node-editor",
+        "animation",
+        "controls",
+        "landing"
+      ],
+      "license": {
+        "state": "site_claim_only",
+        "label": "Website says MIT; public GitHub repository is a blank placeholder",
+        "evidence": "https://www.designpass.dev/"
+      },
+      "adoption": "reference-only",
+      "notes": "Interesting NodeGraph and interactive controls; verify actual downloadable item terms and source before inclusion.",
+      "verified_on": "2026-10-13"
+    },
+    {
+      "id": "shadcn-ui",
+      "name": "shadcn/ui",
+      "kind": "primitives",
+      "website": "https://ui.shadcn.com/",
+      "repository": "https://github.com/shadcn-ui/ui",
+      "stack": [
+        "react",
+        "typescript",
+        "tailwindcss"
+      ],
+      "tags": [
+        "design-system",
+        "dashboard",
+        "forms",
+        "accessibility"
+      ],
+      "license": {
+        "state": "permissive_verified",
+        "label": "MIT",
+        "evidence": "https://github.com/shadcn-ui/ui/blob/main/LICENSE.md"
+      },
+      "adoption": "review-upstream",
+      "notes": "Reference architecture for JSON registries and copy-to-project components. Prefer as an application UI foundation.",
+      "verified_on": "2026-10-13"
+    },
+    {
+      "id": "magic-ui",
+      "name": "Magic UI",
+      "kind": "components",
+      "website": "https://magicui.design/",
+      "repository": "https://github.com/magicuidesign/magicui",
+      "stack": [
+        "react",
+        "typescript",
+        "tailwindcss",
+        "motion"
+      ],
+      "tags": [
+        "animation",
+        "landing",
+        "dashboard"
+      ],
+      "license": {
+        "state": "permissive_verified",
+        "label": "MIT (open-source tier)",
+        "evidence": "https://github.com/magicuidesign/magicui/blob/main/LICENSE.md"
+      },
+      "adoption": "review-upstream",
+      "notes": "Animated effects and layout patterns. Paid components/templates may have separate terms.",
+      "verified_on": "2026-10-13"
+    },
+    {
+      "id": "react-bits",
+      "name": "React Bits",
+      "kind": "components",
+      "website": "https://reactbits.dev/",
+      "repository": "https://github.com/DavidHDev/react-bits",
+      "stack": [
+        "react",
+        "typescript",
+        "css",
+        "tailwindcss"
+      ],
+      "tags": [
+        "animation",
+        "landing",
+        "typography"
+      ],
+      "license": {
+        "state": "restricted",
+        "label": "MIT + Commons Clause",
+        "evidence": "https://github.com/DavidHDev/react-bits/blob/main/LICENSE.md"
+      },
+      "adoption": "reference-only",
+      "notes": "Application use is permitted under stated terms, but selling/sublicensing/redistributing components as a kit or port is restricted.",
+      "verified_on": "2026-10-13"
+    },
+    {
+      "id": "motion-primitives",
+      "name": "Motion Primitives",
+      "kind": "components",
+      "website": "https://motion-primitives.com/",
+      "repository": "https://github.com/ibelick/motion-primitives",
+      "stack": [
+        "react",
+        "typescript",
+        "tailwindcss",
+        "motion"
+      ],
+      "tags": [
+        "animation",
+        "controls",
+        "typography"
+      ],
+      "license": {
+        "state": "permissive_verified",
+        "label": "MIT",
+        "evidence": "https://github.com/ibelick/motion-primitives/blob/main/LICENCE.md"
+      },
+      "adoption": "review-upstream",
+      "notes": "Good source for precise UI transitions; still validate runtime and accessible fallbacks.",
+      "verified_on": "2026-10-13"
+    },
+    {
+      "id": "radix-primitives",
+      "name": "Radix Primitives",
+      "kind": "primitives",
+      "website": "https://www.radix-ui.com/primitives",
+      "repository": "https://github.com/radix-ui/primitives",
+      "stack": [
+        "react",
+        "typescript"
+      ],
+      "tags": [
+        "accessibility",
+        "controls",
+        "forms",
+        "design-system"
+      ],
+      "license": {
+        "state": "permissive_verified",
+        "label": "MIT",
+        "evidence": "https://github.com/radix-ui/primitives/blob/main/LICENSE"
+      },
+      "adoption": "review-upstream",
+      "notes": "Accessible, unstyled base primitives; styling is supplied by the consuming design system.",
+      "verified_on": "2026-10-13"
+    },
+    {
+      "id": "lucide",
+      "name": "Lucide",
+      "kind": "icons",
+      "website": "https://lucide.dev/",
+      "repository": "https://github.com/lucide-icons/lucide",
+      "stack": [
+        "svg",
+        "react",
+        "javascript"
+      ],
+      "tags": [
+        "icons",
+        "design-system"
+      ],
+      "license": {
+        "state": "permissive_verified",
+        "label": "ISC (some inherited icons MIT)",
+        "evidence": "https://github.com/lucide-icons/lucide/blob/main/LICENSE"
+      },
+      "adoption": "review-upstream",
+      "notes": "Consistent icons and multi-framework integrations. Preserve the relevant attribution notices.",
+      "verified_on": "2026-10-13"
+    },
+    {
+      "id": "atlantafx",
+      "name": "AtlantaFX",
+      "kind": "desktop-theme",
+      "website": "https://mkpaz.github.io/atlantafx/",
+      "repository": "https://github.com/mkpaz/atlantafx",
+      "stack": [
+        "java",
+        "javafx",
+        "css"
+      ],
+      "tags": [
+        "desktop",
+        "controls",
+        "design-system"
+      ],
+      "license": {
+        "state": "permissive_verified",
+        "label": "MIT",
+        "evidence": "https://github.com/mkpaz/atlantafx/blob/master/LICENSE"
+      },
+      "adoption": "review-upstream",
+      "notes": "Native JavaFX themes and sample app; Web React components cannot be imported directly into JavaFX.",
+      "verified_on": "2026-10-13"
+    },
+    {
+      "id": "storybook",
+      "name": "Storybook",
+      "kind": "tool",
+      "website": "https://storybook.js.org/",
+      "repository": "https://github.com/storybookjs/storybook",
+      "stack": [
+        "react",
+        "typescript",
+        "web"
+      ],
+      "tags": [
+        "gallery",
+        "preview",
+        "testing",
+        "documentation"
+      ],
+      "license": {
+        "state": "permissive_verified",
+        "label": "MIT",
+        "evidence": "https://github.com/storybookjs/storybook/blob/next/LICENSE"
+      },
+      "adoption": "review-upstream",
+      "notes": "A possible future gallery/test harness for owned, locally implemented UI; not a supplier of design assets.",
+      "verified_on": "2026-10-13"
+    },
+    {
+      "id": "21st-dev",
+      "name": "21st.dev / 21st MCP",
+      "kind": "tool",
+      "website": "https://21st.dev/",
+      "repository": "https://github.com/21st-dev/magic-mcp",
+      "stack": [
+        "mcp",
+        "react",
+        "typescript"
+      ],
+      "tags": [
+        "agent-search",
+        "discovery",
+        "inspiration"
+      ],
+      "license": {
+        "state": "service_terms",
+        "label": "MCP/service terms; components are author-dependent",
+        "evidence": "https://21st.dev/mcp"
+      },
+      "adoption": "reference-only",
+      "notes": "Community component discovery and agent tools; requires checking each item's terms and, for connected service use, credentials/access.",
+      "verified_on": "2026-10-13"
+    },
+    {
+      "id": "dtcg",
+      "name": "Design Tokens Community Group",
+      "kind": "standard",
+      "website": "https://www.designtokens.org/",
+      "repository": "https://github.com/design-tokens/community-group",
+      "stack": [
+        "json",
+        "cross-platform"
+      ],
+      "tags": [
+        "design-tokens",
+        "design-system",
+        "standards"
+      ],
+      "license": {
+        "state": "spec_reference",
+        "label": "Standards reference (not a component license)",
+        "evidence": "https://github.com/design-tokens/community-group"
+      },
+      "adoption": "reference-only",
+      "notes": "Recommended basis for reusable colors, typography, spacing and theme token formats.",
+      "verified_on": "2026-10-13"
+    }
+  ]
+}
