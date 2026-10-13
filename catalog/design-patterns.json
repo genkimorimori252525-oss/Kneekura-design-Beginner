@@ -1,0 +1,732 @@
+{
+  "schema_version": 1,
+  "description": "Kneekura-owned conceptual UI experiments, not third-party code or production-ready components.",
+  "palettes": {
+    "slate": {
+      "background": "#0b1422",
+      "surface": "#152238",
+      "text": "#f4f7fb",
+      "muted": "#bdc9d9",
+      "accent": "#79c4f6",
+      "border": "#45566f"
+    },
+    "paper": {
+      "background": "#f6f8fc",
+      "surface": "#ffffff",
+      "text": "#14233a",
+      "muted": "#4b5e77",
+      "accent": "#234ba2",
+      "border": "#bdcadb"
+    },
+    "mint": {
+      "background": "#f1fbf6",
+      "surface": "#ffffff",
+      "text": "#143d34",
+      "muted": "#466157",
+      "accent": "#08775b",
+      "border": "#a3c9bd"
+    },
+    "midnight": {
+      "background": "#0c1325",
+      "surface": "#17223b",
+      "text": "#f4f6ff",
+      "muted": "#bac8e5",
+      "accent": "#a5b8ff",
+      "border": "#4b5c7b"
+    },
+    "graphite": {
+      "background": "#101419",
+      "surface": "#1b222a",
+      "text": "#f3f6f8",
+      "muted": "#afbbc8",
+      "accent": "#96e1c4",
+      "border": "#43525f"
+    },
+    "ivory": {
+      "background": "#fbf7f1",
+      "surface": "#fffdfb",
+      "text": "#3b2d27",
+      "muted": "#64534d",
+      "accent": "#8b462b",
+      "border": "#c7afa0"
+    },
+    "blue": {
+      "background": "#eff5ff",
+      "surface": "#ffffff",
+      "text": "#102c57",
+      "muted": "#435d84",
+      "accent": "#1554c0",
+      "border": "#b2c9e9"
+    },
+    "plum": {
+      "background": "#190f28",
+      "surface": "#261839",
+      "text": "#fcf6ff",
+      "muted": "#d1bbde",
+      "accent": "#f1a2f7",
+      "border": "#684e7a"
+    }
+  },
+  "patterns": [
+    {
+      "id": "chat-focused",
+      "genre": "chat",
+      "name": "Focused Dialogue",
+      "description": "A compact, dependable exchange with a calm hierarchy and no movement.",
+      "origin": "kneekura-original-concept",
+      "preview_kind": "locally-rendered-vanilla-prototype",
+      "usage": "visual-reference-and-independent-implementation",
+      "stack": "browser-preview-only",
+      "supported_target_families": [
+        "web",
+        "desktop",
+        "android",
+        "minecraft"
+      ],
+      "visual": {
+        "palette": "paper",
+        "density": "comfortable",
+        "tone": "professional",
+        "motion": "none",
+        "contrast": "high",
+        "layout": "chat"
+      },
+      "estimate": {
+        "integration_effort": "low",
+        "kind": "qualitative-unverified"
+      },
+      "tags": [
+        "precision",
+        "reading",
+        "long conversations"
+      ],
+      "strengths": [
+        "Long messages remain primary",
+        "Simple message actions"
+      ],
+      "tradeoffs": [
+        "Less playful character"
+      ],
+      "caveats": [
+        "Concept preview only; native platform behavior and accessibility are not proven.",
+        "Do not treat a browser mockup as a finished React/JavaFX/Android/Minecraft component."
+      ]
+    },
+    {
+      "id": "chat-conversational",
+      "genre": "chat",
+      "name": "Friendly Exchange",
+      "description": "Roomy conversational cards and reassuring completion states.",
+      "origin": "kneekura-original-concept",
+      "preview_kind": "locally-rendered-vanilla-prototype",
+      "usage": "visual-reference-and-independent-implementation",
+      "stack": "browser-preview-only",
+      "supported_target_families": [
+        "web",
+        "desktop",
+        "android",
+        "minecraft"
+      ],
+      "visual": {
+        "palette": "mint",
+        "density": "comfortable",
+        "tone": "friendly",
+        "motion": "subtle",
+        "contrast": "high",
+        "layout": "chat"
+      },
+      "estimate": {
+        "integration_effort": "medium",
+        "kind": "qualitative-unverified"
+      },
+      "tags": [
+        "welcoming",
+        "dialogue",
+        "support"
+      ],
+      "strengths": [
+        "Clear assistant/user distinction",
+        "Gentle spacing"
+      ],
+      "tradeoffs": [
+        "Lower information density"
+      ],
+      "caveats": [
+        "Concept preview only; native platform behavior and accessibility are not proven.",
+        "Do not treat a browser mockup as a finished React/JavaFX/Android/Minecraft component."
+      ]
+    },
+    {
+      "id": "chat-studio",
+      "genre": "chat",
+      "name": "Agent Studio",
+      "description": "A technical chat room with contextual metadata and per-agent labels.",
+      "origin": "kneekura-original-concept",
+      "preview_kind": "locally-rendered-vanilla-prototype",
+      "usage": "visual-reference-and-independent-implementation",
+      "stack": "browser-preview-only",
+      "supported_target_families": [
+        "web",
+        "desktop",
+        "android",
+        "minecraft"
+      ],
+      "visual": {
+        "palette": "graphite",
+        "density": "dense",
+        "tone": "technical",
+        "motion": "subtle",
+        "contrast": "high",
+        "layout": "chat"
+      },
+      "estimate": {
+        "integration_effort": "medium",
+        "kind": "qualitative-unverified"
+      },
+      "tags": [
+        "multi-agent",
+        "development",
+        "status"
+      ],
+      "strengths": [
+        "Easy author attribution",
+        "Efficient technical logs"
+      ],
+      "tradeoffs": [
+        "Can feel busy on small screens"
+      ],
+      "caveats": [
+        "Concept preview only; native platform behavior and accessibility are not proven.",
+        "Do not treat a browser mockup as a finished React/JavaFX/Android/Minecraft component."
+      ]
+    },
+    {
+      "id": "nav-rail",
+      "genre": "navigation",
+      "name": "Quiet Navigation",
+      "description": "Restrained side rail with clear active states.",
+      "origin": "kneekura-original-concept",
+      "preview_kind": "locally-rendered-vanilla-prototype",
+      "usage": "visual-reference-and-independent-implementation",
+      "stack": "browser-preview-only",
+      "supported_target_families": [
+        "web",
+        "desktop",
+        "android",
+        "minecraft"
+      ],
+      "visual": {
+        "palette": "paper",
+        "density": "comfortable",
+        "tone": "professional",
+        "motion": "none",
+        "contrast": "high",
+        "layout": "navigation"
+      },
+      "estimate": {
+        "integration_effort": "low",
+        "kind": "qualitative-unverified"
+      },
+      "tags": [
+        "simple",
+        "fast",
+        "navigation"
+      ],
+      "strengths": [
+        "Stable wayfinding",
+        "Low visual noise"
+      ],
+      "tradeoffs": [
+        "Fewer visible tool groups"
+      ],
+      "caveats": [
+        "Concept preview only; native platform behavior and accessibility are not proven.",
+        "Do not treat a browser mockup as a finished React/JavaFX/Android/Minecraft component."
+      ]
+    },
+    {
+      "id": "nav-workbench",
+      "genre": "navigation",
+      "name": "Workbench Navigator",
+      "description": "Tightly organized project areas and status markers.",
+      "origin": "kneekura-original-concept",
+      "preview_kind": "locally-rendered-vanilla-prototype",
+      "usage": "visual-reference-and-independent-implementation",
+      "stack": "browser-preview-only",
+      "supported_target_families": [
+        "web",
+        "desktop",
+        "android",
+        "minecraft"
+      ],
+      "visual": {
+        "palette": "slate",
+        "density": "dense",
+        "tone": "technical",
+        "motion": "none",
+        "contrast": "high",
+        "layout": "navigation"
+      },
+      "estimate": {
+        "integration_effort": "medium",
+        "kind": "qualitative-unverified"
+      },
+      "tags": [
+        "workspace",
+        "development",
+        "multitasking"
+      ],
+      "strengths": [
+        "Fits many sections",
+        "Status nearby"
+      ],
+      "tradeoffs": [
+        "Small screens need collapse"
+      ],
+      "caveats": [
+        "Concept preview only; native platform behavior and accessibility are not proven.",
+        "Do not treat a browser mockup as a finished React/JavaFX/Android/Minecraft component."
+      ]
+    },
+    {
+      "id": "nav-soft",
+      "genre": "navigation",
+      "name": "Soft Sections",
+      "description": "Inviting rounded surfaces and simple categories.",
+      "origin": "kneekura-original-concept",
+      "preview_kind": "locally-rendered-vanilla-prototype",
+      "usage": "visual-reference-and-independent-implementation",
+      "stack": "browser-preview-only",
+      "supported_target_families": [
+        "web",
+        "desktop",
+        "android",
+        "minecraft"
+      ],
+      "visual": {
+        "palette": "mint",
+        "density": "comfortable",
+        "tone": "friendly",
+        "motion": "subtle",
+        "contrast": "high",
+        "layout": "navigation"
+      },
+      "estimate": {
+        "integration_effort": "low",
+        "kind": "qualitative-unverified"
+      },
+      "tags": [
+        "beginner",
+        "welcoming",
+        "navigation"
+      ],
+      "strengths": [
+        "Clear grouping",
+        "Comfortable touch areas"
+      ],
+      "tradeoffs": [
+        "Uses more horizontal space"
+      ],
+      "caveats": [
+        "Concept preview only; native platform behavior and accessibility are not proven.",
+        "Do not treat a browser mockup as a finished React/JavaFX/Android/Minecraft component."
+      ]
+    },
+    {
+      "id": "dashboard-command",
+      "genre": "dashboards",
+      "name": "Command Dashboard",
+      "description": "High-density operational metrics with explicit states.",
+      "origin": "kneekura-original-concept",
+      "preview_kind": "locally-rendered-vanilla-prototype",
+      "usage": "visual-reference-and-independent-implementation",
+      "stack": "browser-preview-only",
+      "supported_target_families": [
+        "web",
+        "desktop",
+        "android",
+        "minecraft"
+      ],
+      "visual": {
+        "palette": "graphite",
+        "density": "dense",
+        "tone": "technical",
+        "motion": "none",
+        "contrast": "high",
+        "layout": "dashboards"
+      },
+      "estimate": {
+        "integration_effort": "medium",
+        "kind": "qualitative-unverified"
+      },
+      "tags": [
+        "observability",
+        "analysis",
+        "status"
+      ],
+      "strengths": [
+        "Many metrics at once",
+        "Errors visually explicit"
+      ],
+      "tradeoffs": [
+        "Requires careful hierarchy"
+      ],
+      "caveats": [
+        "Concept preview only; native platform behavior and accessibility are not proven.",
+        "Do not treat a browser mockup as a finished React/JavaFX/Android/Minecraft component."
+      ]
+    },
+    {
+      "id": "dashboard-quiet",
+      "genre": "dashboards",
+      "name": "Quiet Overview",
+      "description": "A measured visual overview of a handful of signals.",
+      "origin": "kneekura-original-concept",
+      "preview_kind": "locally-rendered-vanilla-prototype",
+      "usage": "visual-reference-and-independent-implementation",
+      "stack": "browser-preview-only",
+      "supported_target_families": [
+        "web",
+        "desktop",
+        "android",
+        "minecraft"
+      ],
+      "visual": {
+        "palette": "paper",
+        "density": "comfortable",
+        "tone": "professional",
+        "motion": "subtle",
+        "contrast": "high",
+        "layout": "dashboards"
+      },
+      "estimate": {
+        "integration_effort": "low",
+        "kind": "qualitative-unverified"
+      },
+      "tags": [
+        "analysis",
+        "reports",
+        "reading"
+      ],
+      "strengths": [
+        "Strong readability",
+        "Minimal visual clutter"
+      ],
+      "tradeoffs": [
+        "Fewer visible metrics"
+      ],
+      "caveats": [
+        "Concept preview only; native platform behavior and accessibility are not proven.",
+        "Do not treat a browser mockup as a finished React/JavaFX/Android/Minecraft component."
+      ]
+    },
+    {
+      "id": "dashboard-expressive",
+      "genre": "dashboards",
+      "name": "Signal Spotlight",
+      "description": "High-energy headline numbers for exploratory demos.",
+      "origin": "kneekura-original-concept",
+      "preview_kind": "locally-rendered-vanilla-prototype",
+      "usage": "visual-reference-and-independent-implementation",
+      "stack": "browser-preview-only",
+      "supported_target_families": [
+        "web",
+        "desktop",
+        "android",
+        "minecraft"
+      ],
+      "visual": {
+        "palette": "plum",
+        "density": "spacious",
+        "tone": "bold",
+        "motion": "expressive",
+        "contrast": "standard",
+        "layout": "dashboards"
+      },
+      "estimate": {
+        "integration_effort": "high",
+        "kind": "qualitative-unverified"
+      },
+      "tags": [
+        "presentation",
+        "showcase",
+        "marketing"
+      ],
+      "strengths": [
+        "Distinct visual identity",
+        "Highlights one KPI"
+      ],
+      "tradeoffs": [
+        "Motion and low density can distract from operations"
+      ],
+      "caveats": [
+        "Concept preview only; native platform behavior and accessibility are not proven.",
+        "Do not treat a browser mockup as a finished React/JavaFX/Android/Minecraft component."
+      ]
+    },
+    {
+      "id": "graph-linear",
+      "genre": "node-graphs",
+      "name": "Linear Pipeline",
+      "description": "A strict left-to-right technical agent flow with visible steps.",
+      "origin": "kneekura-original-concept",
+      "preview_kind": "locally-rendered-vanilla-prototype",
+      "usage": "visual-reference-and-independent-implementation",
+      "stack": "browser-preview-only",
+      "supported_target_families": [
+        "web",
+        "desktop",
+        "android",
+        "minecraft"
+      ],
+      "visual": {
+        "palette": "graphite",
+        "density": "dense",
+        "tone": "technical",
+        "motion": "none",
+        "contrast": "high",
+        "layout": "node-graphs"
+      },
+      "estimate": {
+        "integration_effort": "low",
+        "kind": "qualitative-unverified"
+      },
+      "tags": [
+        "agents",
+        "pipeline",
+        "debugging"
+      ],
+      "strengths": [
+        "Easy stage diagnosis",
+        "Very predictable layout"
+      ],
+      "tradeoffs": [
+        "Less flexible for branching"
+      ],
+      "caveats": [
+        "Concept preview only; native platform behavior and accessibility are not proven.",
+        "Do not treat a browser mockup as a finished React/JavaFX/Android/Minecraft component."
+      ]
+    },
+    {
+      "id": "graph-relational",
+      "genre": "node-graphs",
+      "name": "Team Relations",
+      "description": "Readable related-agent grouping and status feedback.",
+      "origin": "kneekura-original-concept",
+      "preview_kind": "locally-rendered-vanilla-prototype",
+      "usage": "visual-reference-and-independent-implementation",
+      "stack": "browser-preview-only",
+      "supported_target_families": [
+        "web",
+        "desktop",
+        "android",
+        "minecraft"
+      ],
+      "visual": {
+        "palette": "slate",
+        "density": "comfortable",
+        "tone": "professional",
+        "motion": "subtle",
+        "contrast": "high",
+        "layout": "node-graphs"
+      },
+      "estimate": {
+        "integration_effort": "medium",
+        "kind": "qualitative-unverified"
+      },
+      "tags": [
+        "agents",
+        "collaboration",
+        "orchestration"
+      ],
+      "strengths": [
+        "Shows collaboration clearly",
+        "Supports selected-node inspection"
+      ],
+      "tradeoffs": [
+        "Requires more layout area"
+      ],
+      "caveats": [
+        "Concept preview only; native platform behavior and accessibility are not proven.",
+        "Do not treat a browser mockup as a finished React/JavaFX/Android/Minecraft component."
+      ]
+    },
+    {
+      "id": "graph-showcase",
+      "genre": "node-graphs",
+      "name": "Showcase Network",
+      "description": "A dramatic high-contrast workflow centerpiece.",
+      "origin": "kneekura-original-concept",
+      "preview_kind": "locally-rendered-vanilla-prototype",
+      "usage": "visual-reference-and-independent-implementation",
+      "stack": "browser-preview-only",
+      "supported_target_families": [
+        "web",
+        "desktop",
+        "android",
+        "minecraft"
+      ],
+      "visual": {
+        "palette": "midnight",
+        "density": "spacious",
+        "tone": "bold",
+        "motion": "expressive",
+        "contrast": "high",
+        "layout": "node-graphs"
+      },
+      "estimate": {
+        "integration_effort": "high",
+        "kind": "qualitative-unverified"
+      },
+      "tags": [
+        "presentation",
+        "agents",
+        "showcase"
+      ],
+      "strengths": [
+        "Clear focus for demonstrations",
+        "Distinct visual signature"
+      ],
+      "tradeoffs": [
+        "Motion/space cost exceeds many production needs"
+      ],
+      "caveats": [
+        "Concept preview only; native platform behavior and accessibility are not proven.",
+        "Do not treat a browser mockup as a finished React/JavaFX/Android/Minecraft component."
+      ]
+    },
+    {
+      "id": "form-accessible",
+      "genre": "forms",
+      "name": "Clear Form",
+      "description": "High-legibility form fields with explicit labels and errors.",
+      "origin": "kneekura-original-concept",
+      "preview_kind": "locally-rendered-vanilla-prototype",
+      "usage": "visual-reference-and-independent-implementation",
+      "stack": "browser-preview-only",
+      "supported_target_families": [
+        "web",
+        "desktop",
+        "android",
+        "minecraft"
+      ],
+      "visual": {
+        "palette": "paper",
+        "density": "comfortable",
+        "tone": "professional",
+        "motion": "none",
+        "contrast": "high",
+        "layout": "forms"
+      },
+      "estimate": {
+        "integration_effort": "low",
+        "kind": "qualitative-unverified"
+      },
+      "tags": [
+        "settings",
+        "accessibility",
+        "input"
+      ],
+      "strengths": [
+        "Robust visual hierarchy",
+        "Focus labels visible"
+      ],
+      "tradeoffs": [
+        "Intentionally conservative"
+      ],
+      "caveats": [
+        "Concept preview only; native platform behavior and accessibility are not proven.",
+        "Do not treat a browser mockup as a finished React/JavaFX/Android/Minecraft component."
+      ]
+    },
+    {
+      "id": "form-compact",
+      "genre": "forms",
+      "name": "Dense Controls",
+      "description": "Compact switches and aligned technical configuration inputs.",
+      "origin": "kneekura-original-concept",
+      "preview_kind": "locally-rendered-vanilla-prototype",
+      "usage": "visual-reference-and-independent-implementation",
+      "stack": "browser-preview-only",
+      "supported_target_families": [
+        "web",
+        "desktop",
+        "android",
+        "minecraft"
+      ],
+      "visual": {
+        "palette": "graphite",
+        "density": "dense",
+        "tone": "technical",
+        "motion": "none",
+        "contrast": "high",
+        "layout": "forms"
+      },
+      "estimate": {
+        "integration_effort": "low",
+        "kind": "qualitative-unverified"
+      },
+      "tags": [
+        "developer",
+        "settings",
+        "tools"
+      ],
+      "strengths": [
+        "Screen-space efficiency",
+        "Direct status feedback"
+      ],
+      "tradeoffs": [
+        "Small touch targets require expansion"
+      ],
+      "caveats": [
+        "Concept preview only; native platform behavior and accessibility are not proven.",
+        "Do not treat a browser mockup as a finished React/JavaFX/Android/Minecraft component."
+      ]
+    },
+    {
+      "id": "form-friendly",
+      "genre": "forms",
+      "name": "Friendly Settings",
+      "description": "Rounded, generous control layout and helpful explanations.",
+      "origin": "kneekura-original-concept",
+      "preview_kind": "locally-rendered-vanilla-prototype",
+      "usage": "visual-reference-and-independent-implementation",
+      "stack": "browser-preview-only",
+      "supported_target_families": [
+        "web",
+        "desktop",
+        "android",
+        "minecraft"
+      ],
+      "visual": {
+        "palette": "ivory",
+        "density": "spacious",
+        "tone": "friendly",
+        "motion": "subtle",
+        "contrast": "standard",
+        "layout": "forms"
+      },
+      "estimate": {
+        "integration_effort": "medium",
+        "kind": "qualitative-unverified"
+      },
+      "tags": [
+        "onboarding",
+        "settings",
+        "tutorial"
+      ],
+      "strengths": [
+        "Approachable for new users",
+        "Visible guidance"
+      ],
+      "tradeoffs": [
+        "Less appropriate for dense operator screens"
+      ],
+      "caveats": [
+        "Concept preview only; native platform behavior and accessibility are not proven.",
+        "Do not treat a browser mockup as a finished React/JavaFX/Android/Minecraft component."
+      ]
+    }
+  ]
+}

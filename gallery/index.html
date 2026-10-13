@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="AI-first design laboratory with original, locally rendered UI concepts.">
+<title>Kneekura Design Lab — Original Concepts</title>
+<link rel="stylesheet" href="/styles.css">
+<script type="module" src="/app.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">メインコンテンツへ</a>
+<header class="topbar">
+  <div class="brand"><div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div><div><strong>KNEEKURA <span>DESIGN LAB</span></strong><small>Agent-first design research</small></div></div>
+  <div class="top-actions"><span class="local-label"><span class="live-dot"></span> LOCAL-ONLY PREVIEW</span><button id="copy-button" class="outline-action" type="button">選択データをコピー</button></div>
+</header>
+<main id="main">
+  <section class="intro">
+    <p class="eyebrow">DESIGN EXPLORATION / 01</p>
+    <h1>AIが選ぶための、<span>デザイン研究環境。</span></h1>
+    <p>操作性・密度・色・動きを見比べるためのオリジナルプロトタイプ。ここでの見た目は参考資料であり、対象アプリへの実装を保証するものではありません。</p>
+    <div class="intro-facts"><span><b id="pattern-count">—</b> original concepts</span><span><b id="genre-count">—</b> component genres</span><span>0 external UI code mirrored</span></div>
+  </section>
+  <div class="workspace">
+    <aside class="panel filters" aria-label="デザイン候補の絞り込み">
+      <div class="section-heading"><span>01</span><h2>Discover</h2></div>
+      <label class="input-label" for="search">Search concepts</label>
+      <input id="search" type="search" placeholder="chat / graph / minimal…">
+      <label class="input-label" for="target">Implementation target</label>
+      <select id="target" aria-label="実装予定環境"></select>
+      <p class="mini-note">ブラウザ上の試作品は、JavaFX・Android・Forgeで直接動くコードではありません。</p>
+      <h3 class="filter-title">ジャンル</h3>
+      <div id="genres" class="genre-list" aria-label="ジャンル一覧"></div>
+      <div class="aside-note"><b>DESIGN POLICY</b><p>合わなければ選ばない。デザインに合わせて既存の機能を壊さない。</p></div>
+    </aside>
+    <section class="panel catalog" aria-labelledby="catalog-heading">
+      <div class="section-heading"><span>02</span><h2 id="catalog-heading">Design concepts</h2><small id="visible-count" class="count-pill"></small></div>
+      <div class="catalog-note">候補を選ぶと右側で詳細表示。最大2件の比較も可能。</div>
+      <div id="cards" class="gallery" aria-live="polite"></div>
+    </section>
+    <aside class="panel inspector" aria-label="選択中の候補">
+      <div class="section-heading"><span>03</span><h2>Inspect</h2></div>
+      <div id="selection" aria-live="polite"></div>
+    </aside>
+  </div>
+  <section class="comparison-panel panel" aria-labelledby="compare-heading">
+    <div class="section-heading"><span>04</span><h2 id="compare-heading">Side-by-side comparison</h2><span class="helper-label">Concept preview only</span></div>
+    <div id="comparison" class="comparison"></div>
+  </section>
+  <footer>Source of truth: catalog/design-patterns.json · AI must still inspect the destination application's actual UI, and write a reasoned decision receipt.</footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</main>
+</body>
+</html>

@@ -1,0 +1,761 @@
+{
+  "schema_version": 1,
+  "model": {
+    "code": {
+      "direct": "The component/library's code is technically intended for this target. This is NOT a license approval.",
+      "adapt": "Components/tokens/icons need an adapter, conversion, or nontrivial integration before use.",
+      "incompatible": "The original runtime code cannot be directly used in this target; consult only visual ideas if marked useful.",
+      "unverified": "No verified usable source/package or technical proof. Treat as inspiration until investigated.",
+      "tool-only": "External tooling/reference; not an end-user UI component."
+    },
+    "visual": {
+      "high": "Visual patterns are closely relevant.",
+      "medium": "Useful as conceptual inspiration; implement natively.",
+      "low": "Limited conceptual relevance.",
+      "none": "Not an applicable visual reference."
+    },
+    "semantics": "Technical implementation compatibility and visual inspiration value are independent. This is not legal/use authorization."
+  },
+  "sources": {
+    "morphin": {
+      "platforms": {
+        "react-web": {
+          "code": "direct",
+          "visual": "high"
+        },
+        "vanilla-web": {
+          "code": "incompatible",
+          "visual": "high"
+        },
+        "vue-web": {
+          "code": "incompatible",
+          "visual": "high"
+        },
+        "javafx-desktop": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "android-compose": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "android-views": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "minecraft-forge-gui": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "minecraft-fabric-gui": {
+          "code": "incompatible",
+          "visual": "medium"
+        }
+      },
+      "note": "React/TypeScript browser registry; public code license unverified."
+    },
+    "viora-ui": {
+      "platforms": {
+        "react-web": {
+          "code": "unverified",
+          "visual": "high"
+        },
+        "vanilla-web": {
+          "code": "incompatible",
+          "visual": "high"
+        },
+        "vue-web": {
+          "code": "incompatible",
+          "visual": "high"
+        },
+        "javafx-desktop": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "android-compose": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "android-views": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "minecraft-forge-gui": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "minecraft-fabric-gui": {
+          "code": "incompatible",
+          "visual": "medium"
+        }
+      },
+      "note": "React stated in README; actual component source not verified in public repo."
+    },
+    "tween-ui": {
+      "platforms": {
+        "react-web": {
+          "code": "direct",
+          "visual": "high"
+        },
+        "vanilla-web": {
+          "code": "incompatible",
+          "visual": "high"
+        },
+        "vue-web": {
+          "code": "incompatible",
+          "visual": "high"
+        },
+        "javafx-desktop": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "android-compose": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "android-views": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "minecraft-forge-gui": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "minecraft-fabric-gui": {
+          "code": "incompatible",
+          "visual": "medium"
+        }
+      },
+      "note": "React/GSAP source components; review runtime dependencies."
+    },
+    "scrollx-ui": {
+      "platforms": {
+        "react-web": {
+          "code": "direct",
+          "visual": "high"
+        },
+        "vanilla-web": {
+          "code": "incompatible",
+          "visual": "high"
+        },
+        "vue-web": {
+          "code": "incompatible",
+          "visual": "high"
+        },
+        "javafx-desktop": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "android-compose": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "android-views": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "minecraft-forge-gui": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "minecraft-fabric-gui": {
+          "code": "incompatible",
+          "visual": "medium"
+        }
+      },
+      "note": "React site components; repository redistribution restrictions are separate from technical fit."
+    },
+    "toggle-supply": {
+      "platforms": {
+        "react-web": {
+          "code": "adapt",
+          "visual": "high"
+        },
+        "vanilla-web": {
+          "code": "direct",
+          "visual": "high"
+        },
+        "vue-web": {
+          "code": "adapt",
+          "visual": "high"
+        },
+        "javafx-desktop": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "android-compose": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "android-views": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "minecraft-forge-gui": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "minecraft-fabric-gui": {
+          "code": "incompatible",
+          "visual": "medium"
+        }
+      },
+      "note": "CSS-first, vanilla HTML/JS; frameworks can wrap/refactor markup."
+    },
+    "designpass": {
+      "platforms": {
+        "react-web": {
+          "code": "unverified",
+          "visual": "high"
+        },
+        "vanilla-web": {
+          "code": "incompatible",
+          "visual": "high"
+        },
+        "vue-web": {
+          "code": "incompatible",
+          "visual": "high"
+        },
+        "javafx-desktop": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "android-compose": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "android-views": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "minecraft-forge-gui": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "minecraft-fabric-gui": {
+          "code": "incompatible",
+          "visual": "medium"
+        }
+      },
+      "note": "Website demo suggests React, but public GitHub repo is only a placeholder."
+    },
+    "shadcn-ui": {
+      "platforms": {
+        "react-web": {
+          "code": "direct",
+          "visual": "high"
+        },
+        "vanilla-web": {
+          "code": "incompatible",
+          "visual": "high"
+        },
+        "vue-web": {
+          "code": "incompatible",
+          "visual": "high"
+        },
+        "javafx-desktop": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "android-compose": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "android-views": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "minecraft-forge-gui": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "minecraft-fabric-gui": {
+          "code": "incompatible",
+          "visual": "medium"
+        }
+      },
+      "note": "React-first registry; Vue versions are separate implementations, not drop-in React code."
+    },
+    "magic-ui": {
+      "platforms": {
+        "react-web": {
+          "code": "direct",
+          "visual": "high"
+        },
+        "vanilla-web": {
+          "code": "incompatible",
+          "visual": "high"
+        },
+        "vue-web": {
+          "code": "incompatible",
+          "visual": "high"
+        },
+        "javafx-desktop": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "android-compose": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "android-views": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "minecraft-forge-gui": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "minecraft-fabric-gui": {
+          "code": "incompatible",
+          "visual": "medium"
+        }
+      },
+      "note": "React web effects; check free-vs-paid component rights."
+    },
+    "react-bits": {
+      "platforms": {
+        "react-web": {
+          "code": "direct",
+          "visual": "high"
+        },
+        "vanilla-web": {
+          "code": "incompatible",
+          "visual": "high"
+        },
+        "vue-web": {
+          "code": "incompatible",
+          "visual": "high"
+        },
+        "javafx-desktop": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "android-compose": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "android-views": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "minecraft-forge-gui": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "minecraft-fabric-gui": {
+          "code": "incompatible",
+          "visual": "medium"
+        }
+      },
+      "note": "React web; Commons Clause limits repackaging, separate from technical support."
+    },
+    "motion-primitives": {
+      "platforms": {
+        "react-web": {
+          "code": "direct",
+          "visual": "high"
+        },
+        "vanilla-web": {
+          "code": "incompatible",
+          "visual": "high"
+        },
+        "vue-web": {
+          "code": "incompatible",
+          "visual": "high"
+        },
+        "javafx-desktop": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "android-compose": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "android-views": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "minecraft-forge-gui": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "minecraft-fabric-gui": {
+          "code": "incompatible",
+          "visual": "medium"
+        }
+      },
+      "note": "React Motion primitives."
+    },
+    "radix-primitives": {
+      "platforms": {
+        "react-web": {
+          "code": "direct",
+          "visual": "high"
+        },
+        "vanilla-web": {
+          "code": "incompatible",
+          "visual": "high"
+        },
+        "vue-web": {
+          "code": "incompatible",
+          "visual": "high"
+        },
+        "javafx-desktop": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "android-compose": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "android-views": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "minecraft-forge-gui": {
+          "code": "incompatible",
+          "visual": "low"
+        },
+        "minecraft-fabric-gui": {
+          "code": "incompatible",
+          "visual": "low"
+        }
+      },
+      "note": "React headless UI, keyboard and semantic controls."
+    },
+    "lucide": {
+      "platforms": {
+        "react-web": {
+          "code": "direct",
+          "visual": "high"
+        },
+        "vanilla-web": {
+          "code": "adapt",
+          "visual": "high"
+        },
+        "vue-web": {
+          "code": "direct",
+          "visual": "high"
+        },
+        "javafx-desktop": {
+          "code": "adapt",
+          "visual": "high"
+        },
+        "android-compose": {
+          "code": "adapt",
+          "visual": "high"
+        },
+        "android-views": {
+          "code": "adapt",
+          "visual": "high"
+        },
+        "minecraft-forge-gui": {
+          "code": "adapt",
+          "visual": "high"
+        },
+        "minecraft-fabric-gui": {
+          "code": "adapt",
+          "visual": "high"
+        }
+      },
+      "note": "Multi-platform SVG icons; for non-Web targets convert/adapt assets respecting relevant icon attribution."
+    },
+    "atlantafx": {
+      "platforms": {
+        "react-web": {
+          "code": "incompatible",
+          "visual": "low"
+        },
+        "vanilla-web": {
+          "code": "incompatible",
+          "visual": "low"
+        },
+        "vue-web": {
+          "code": "incompatible",
+          "visual": "low"
+        },
+        "javafx-desktop": {
+          "code": "direct",
+          "visual": "high"
+        },
+        "android-compose": {
+          "code": "incompatible",
+          "visual": "low"
+        },
+        "android-views": {
+          "code": "incompatible",
+          "visual": "low"
+        },
+        "minecraft-forge-gui": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "minecraft-fabric-gui": {
+          "code": "incompatible",
+          "visual": "medium"
+        }
+      },
+      "note": "JavaFX CSS/controls, not browser CSS/React code."
+    },
+    "storybook": {
+      "platforms": {
+        "react-web": {
+          "code": "tool-only",
+          "visual": "none"
+        },
+        "vanilla-web": {
+          "code": "tool-only",
+          "visual": "none"
+        },
+        "vue-web": {
+          "code": "tool-only",
+          "visual": "none"
+        },
+        "javafx-desktop": {
+          "code": "incompatible",
+          "visual": "none"
+        },
+        "android-compose": {
+          "code": "incompatible",
+          "visual": "none"
+        },
+        "android-views": {
+          "code": "incompatible",
+          "visual": "none"
+        },
+        "minecraft-forge-gui": {
+          "code": "incompatible",
+          "visual": "none"
+        },
+        "minecraft-fabric-gui": {
+          "code": "incompatible",
+          "visual": "none"
+        }
+      },
+      "note": "Development preview/test harness, not an end-user UI component."
+    },
+    "21st-dev": {
+      "platforms": {
+        "react-web": {
+          "code": "tool-only",
+          "visual": "none"
+        },
+        "vanilla-web": {
+          "code": "tool-only",
+          "visual": "none"
+        },
+        "vue-web": {
+          "code": "tool-only",
+          "visual": "none"
+        },
+        "javafx-desktop": {
+          "code": "tool-only",
+          "visual": "none"
+        },
+        "android-compose": {
+          "code": "tool-only",
+          "visual": "none"
+        },
+        "android-views": {
+          "code": "tool-only",
+          "visual": "none"
+        },
+        "minecraft-forge-gui": {
+          "code": "tool-only",
+          "visual": "none"
+        },
+        "minecraft-fabric-gui": {
+          "code": "tool-only",
+          "visual": "none"
+        }
+      },
+      "note": "Agent-side remote discovery/MCP service, not a runtime UI component; service/API access may be required."
+    },
+    "dtcg": {
+      "platforms": {
+        "react-web": {
+          "code": "adapt",
+          "visual": "high"
+        },
+        "vanilla-web": {
+          "code": "adapt",
+          "visual": "high"
+        },
+        "vue-web": {
+          "code": "adapt",
+          "visual": "high"
+        },
+        "javafx-desktop": {
+          "code": "adapt",
+          "visual": "high"
+        },
+        "android-compose": {
+          "code": "adapt",
+          "visual": "high"
+        },
+        "android-views": {
+          "code": "adapt",
+          "visual": "high"
+        },
+        "minecraft-forge-gui": {
+          "code": "adapt",
+          "visual": "high"
+        },
+        "minecraft-fabric-gui": {
+          "code": "adapt",
+          "visual": "high"
+        }
+      },
+      "note": "Cross-platform design tokens specification; each runtime needs token adapters."
+    },
+    "androidx-compose": {
+      "platforms": {
+        "react-web": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "vanilla-web": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "vue-web": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "javafx-desktop": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "android-compose": {
+          "code": "direct",
+          "visual": "high"
+        },
+        "android-views": {
+          "code": "adapt",
+          "visual": "high"
+        },
+        "minecraft-forge-gui": {
+          "code": "incompatible",
+          "visual": "low"
+        },
+        "minecraft-fabric-gui": {
+          "code": "incompatible",
+          "visual": "low"
+        }
+      },
+      "note": "Native Jetpack Compose UI; Views apps need explicit Compose interop/migration."
+    },
+    "android-material-views": {
+      "platforms": {
+        "react-web": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "vanilla-web": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "vue-web": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "javafx-desktop": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "android-compose": {
+          "code": "adapt",
+          "visual": "high"
+        },
+        "android-views": {
+          "code": "direct",
+          "visual": "high"
+        },
+        "minecraft-forge-gui": {
+          "code": "incompatible",
+          "visual": "low"
+        },
+        "minecraft-fabric-gui": {
+          "code": "incompatible",
+          "visual": "low"
+        }
+      },
+      "note": "Android View/XML Material components, now maintenance mode; Compose usage requires bridging."
+    },
+    "materialfx": {
+      "platforms": {
+        "react-web": {
+          "code": "incompatible",
+          "visual": "low"
+        },
+        "vanilla-web": {
+          "code": "incompatible",
+          "visual": "low"
+        },
+        "vue-web": {
+          "code": "incompatible",
+          "visual": "low"
+        },
+        "javafx-desktop": {
+          "code": "direct",
+          "visual": "high"
+        },
+        "android-compose": {
+          "code": "incompatible",
+          "visual": "low"
+        },
+        "android-views": {
+          "code": "incompatible",
+          "visual": "low"
+        },
+        "minecraft-forge-gui": {
+          "code": "incompatible",
+          "visual": "medium"
+        },
+        "minecraft-fabric-gui": {
+          "code": "incompatible",
+          "visual": "medium"
+        }
+      },
+      "note": "JavaFX UI controls and CSS; check JavaFX version/dependencies."
+    },
+    "fabric-libgui": {
+      "platforms": {
+        "react-web": {
+          "code": "incompatible",
+          "visual": "low"
+        },
+        "vanilla-web": {
+          "code": "incompatible",
+          "visual": "low"
+        },
+        "vue-web": {
+          "code": "incompatible",
+          "visual": "low"
+        },
+        "javafx-desktop": {
+          "code": "incompatible",
+          "visual": "low"
+        },
+        "android-compose": {
+          "code": "incompatible",
+          "visual": "low"
+        },
+        "android-views": {
+          "code": "incompatible",
+          "visual": "low"
+        },
+        "minecraft-forge-gui": {
+          "code": "incompatible",
+          "visual": "high"
+        },
+        "minecraft-fabric-gui": {
+          "code": "direct",
+          "visual": "high"
+        }
+      },
+      "note": "Fabric GUI components. Direct Forge loading is not supported; conceptual layouts remain applicable."
+    }
+  }
+}

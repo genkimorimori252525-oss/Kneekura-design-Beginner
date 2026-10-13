@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "use_cases": [
+    {
+      "id": "ai-chat",
+      "label": "AI chat interface",
+      "objective": "Readable conversation, reliable keyboard navigation, low-motion and loading states.",
+      "preferred_stack": [
+        "react",
+        "typescript"
+      ],
+      "source_ids": [
+        "shadcn-ui",
+        "radix-primitives",
+        "morphin",
+        "lucide",
+        "androidx-compose",
+        "android-material-views",
+        "atlantafx",
+        "materialfx"
+      ],
+      "checks": [
+        "Keyboard navigation",
+        "Responsive width",
+        "Clear sending / loading / failed states",
+        "Reduced motion"
+      ]
+    },
+    {
+      "id": "agent-workflow",
+      "label": "AI agent / pipeline visualization",
+      "objective": "Make agent-to-agent work observable without obscuring status or failures.",
+      "preferred_stack": [
+        "react",
+        "typescript"
+      ],
+      "source_ids": [
+        "designpass",
+        "shadcn-ui",
+        "storybook"
+      ],
+      "checks": [
+        "Legible node labels",
+        "Keyboard alternatives to drag",
+        "Visible connection status",
+        "No expensive animation on every frame"
+      ]
+    },
+    {
+      "id": "dashboard",
+      "label": "Research dashboard",
+      "objective": "Prioritize data density, filtering and status over decorative effects.",
+      "preferred_stack": [
+        "react",
+        "typescript"
+      ],
+      "source_ids": [
+        "shadcn-ui",
+        "radix-primitives",
+        "scrollx-ui",
+        "toggle-supply",
+        "materialfx",
+        "androidx-compose"
+      ],
+      "checks": [
+        "Readable tables and charts",
+        "No hidden critical indicators",
+        "Responsive panels",
+        "Respect source restrictions"
+      ]
+    },
+    {
+      "id": "micro-interactions",
+      "label": "Motion and feedback",
+      "objective": "Add meaningful motion only to transitions or status feedback.",
+      "preferred_stack": [
+        "react"
+      ],
+      "source_ids": [
+        "tween-ui",
+        "magic-ui",
+        "motion-primitives",
+        "react-bits"
+      ],
+      "checks": [
+        "Reduced motion",
+        "Animation does not mask errors",
+        "Low CPU/GPU impact",
+        "Avoid stacking animation libraries"
+      ]
+    },
+    {
+      "id": "javafx-desktop",
+      "label": "JavaFX desktop tool",
+      "objective": "Modernize native desktop UI without rewriting its runtime as a website.",
+      "preferred_stack": [
+        "javafx",
+        "java"
+      ],
+      "source_ids": [
+        "atlantafx",
+        "materialfx",
+        "lucide",
+        "dtcg"
+      ],
+      "checks": [
+        "JavaFX native integration",
+        "Theme contrast",
+        "Keep functional behavior unchanged"
+      ]
+    },
+    {
+      "id": "design-system",
+      "label": "Shared visual language",
+      "objective": "Reusable typography, spacing, colors, icons and accessibility conventions across projects.",
+      "preferred_stack": [
+        "cross-platform"
+      ],
+      "source_ids": [
+        "dtcg",
+        "lucide",
+        "shadcn-ui",
+        "radix-primitives"
+      ],
+      "checks": [
+        "Semantic tokens",
+        "Light / dark parity",
+        "Contrast and focus states",
+        "Per-platform adapters"
+      ]
+    },
+    {
+      "id": "gallery",
+      "label": "Design research gallery",
+      "objective": "Browse examples and preview only original or explicitly authorized visual assets.",
+      "preferred_stack": [
+        "web"
+      ],
+      "source_ids": [
+        "storybook",
+        "morphin",
+        "21st-dev"
+      ],
+      "checks": [
+        "Source attribution",
+        "Image reuse permission",
+        "No remote-code execution",
+        "Fast filtering"
+      ]
+    },
+    {
+      "id": "android-native-ui",
+      "label": "Android native application",
+      "objective": "Select UI components matching actual Compose or existing Views app, without mixing both runtimes.",
+      "preferred_stack": [
+        "android-compose",
+        "android-views"
+      ],
+      "source_ids": [
+        "androidx-compose",
+        "android-material-views",
+        "lucide",
+        "dtcg"
+      ],
+      "checks": [
+        "Identify Compose vs Views in existing app",
+        "Avoid unwanted migration",
+        "Touch targets and accessibility",
+        "Respect older-device performance"
+      ]
+    },
+    {
+      "id": "minecraft-gui",
+      "label": "Minecraft mod GUI",
+      "objective": "Prototype in-game screen and HUD ideas without importing UI code from the wrong loader/runtime.",
+      "preferred_stack": [
+        "minecraft-forge-gui",
+        "minecraft-fabric-gui"
+      ],
+      "source_ids": [
+        "fabric-libgui",
+        "lucide",
+        "atlantafx",
+        "toggle-supply"
+      ],
+      "checks": [
+        "Confirm Forge vs Fabric and exact Minecraft version",
+        "Do not import Fabric-only code into Forge",
+        "Implement with target native rendering and input",
+        "Check scale, mouse/keyboard and frame time"
+      ]
+    }
+  ]
+}

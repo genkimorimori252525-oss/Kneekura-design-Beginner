@@ -1,0 +1,55 @@
+name: Validate AI design research
+on:
+  push:
+    paths:
+      - 'catalog/**'
+      - 'tools/**'
+      - 'gallery/**'
+      - 'examples/brief-*.json'
+      - 'AGENTS.md'
+      - '.github/workflows/catalog.yml'
+  pull_request:
+    paths:
+      - 'catalog/**'
+      - 'tools/**'
+      - 'gallery/**'
+      - 'examples/brief-*.json'
+      - 'AGENTS.md'
+      - '.github/workflows/catalog.yml'
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check JavaScript syntax
+        run: |
+          node --check tools/catalog.mjs
+          node --check tools/design-select.mjs
+          node --check tools/serve-gallery.mjs
+          node --check tools/gallery-smoke.mjs
+          node --check gallery/app.js
+      - name: Validate source indexes
+        run: node tools/catalog.mjs validate
+      - name: Check source compatibility
+        run: node tools/catalog.mjs self-test
+      - name: Validate original design catalogs
+        run: node tools/design-select.mjs validate
+      - name: Test AI decision workflow
+        run: node tools/design-select.mjs self-test
+      - name: Exercise shortlist JSON
+        run: node tools/design-select.mjs shortlist examples/brief-agent-workspace.json --json > /dev/null
+      - name: Exercise AI receipt write and verify
+        run: |
+          node tools/design-select.mjs choose examples/brief-agent-workspace.json --design graph-linear --reason "Clearly labeled pipeline stages are useful for debugging agent workflows." --tradeoff "This arrangement cannot describe more complex branching." --review metadata --out decisions/ci-provisional.json
+          node tools/design-select.mjs verify decisions/ci-provisional.json
+      - name: Verify local gallery access and boundaries
+        run: node tools/gallery-smoke.mjs
+      - name: Smoke-test external source JSON query
+        run: |
+          node tools/catalog.mjs recommend minecraft-gui --target minecraft-forge-gui --json > /dev/null
+          node tools/catalog.mjs search --genre motion --target react-web --code direct --json > /dev/null

@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "description": "Component-level research taxonomy. Source links describe plausible research locations, not proven per-component availability.",
+  "needs": [
+    {
+      "id": "message-stream",
+      "genre": "chat",
+      "label": "Conversation messages",
+      "functional_requirements": [
+        "role attribution",
+        "readable message content",
+        "loading and error states"
+      ],
+      "pattern_ids": [
+        "chat-focused",
+        "chat-conversational",
+        "chat-studio"
+      ],
+      "research_sources": [
+        "morphin",
+        "shadcn-ui"
+      ]
+    },
+    {
+      "id": "chat-composer",
+      "genre": "chat",
+      "label": "Composer input",
+      "functional_requirements": [
+        "keyboard send",
+        "empty-state guard",
+        "focus after send"
+      ],
+      "pattern_ids": [
+        "chat-focused",
+        "chat-conversational",
+        "chat-studio"
+      ],
+      "research_sources": [
+        "morphin",
+        "shadcn-ui",
+        "radix-primitives"
+      ]
+    },
+    {
+      "id": "sidebar-navigation",
+      "genre": "navigation",
+      "label": "Sidebar navigation",
+      "functional_requirements": [
+        "active item",
+        "keyboard navigation",
+        "collapse on narrow widths"
+      ],
+      "pattern_ids": [
+        "nav-rail",
+        "nav-workbench",
+        "nav-soft"
+      ],
+      "research_sources": [
+        "shadcn-ui",
+        "viora-ui",
+        "toggle-supply"
+      ]
+    },
+    {
+      "id": "tab-navigation",
+      "genre": "navigation",
+      "label": "Tabs",
+      "functional_requirements": [
+        "aria selected",
+        "keyboard selection",
+        "state persistence when applicable"
+      ],
+      "pattern_ids": [
+        "nav-rail",
+        "nav-workbench"
+      ],
+      "research_sources": [
+        "radix-primitives",
+        "shadcn-ui"
+      ]
+    },
+    {
+      "id": "data-summary",
+      "genre": "dashboards",
+      "label": "Summary metric card",
+      "functional_requirements": [
+        "metric label and unit",
+        "clear empty state",
+        "not color only"
+      ],
+      "pattern_ids": [
+        "dashboard-quiet",
+        "dashboard-command",
+        "dashboard-expressive"
+      ],
+      "research_sources": [
+        "shadcn-ui",
+        "scrollx-ui",
+        "magic-ui"
+      ]
+    },
+    {
+      "id": "status-table",
+      "genre": "dashboards",
+      "label": "Status table",
+      "functional_requirements": [
+        "row labels",
+        "screen-reader friendly states",
+        "filtering"
+      ],
+      "pattern_ids": [
+        "dashboard-command",
+        "dashboard-quiet"
+      ],
+      "research_sources": [
+        "shadcn-ui",
+        "radix-primitives"
+      ]
+    },
+    {
+      "id": "agent-node",
+      "genre": "node-graphs",
+      "label": "Agent process node",
+      "functional_requirements": [
+        "node role",
+        "status",
+        "inspection path"
+      ],
+      "pattern_ids": [
+        "graph-linear",
+        "graph-relational",
+        "graph-showcase"
+      ],
+      "research_sources": [
+        "designpass",
+        "shadcn-ui"
+      ]
+    },
+    {
+      "id": "agent-connection",
+      "genre": "node-graphs",
+      "label": "Agent connection",
+      "functional_requirements": [
+        "legible source/target",
+        "status without color-only communication",
+        "no animation dependency"
+      ],
+      "pattern_ids": [
+        "graph-linear",
+        "graph-relational",
+        "graph-showcase"
+      ],
+      "research_sources": [
+        "designpass"
+      ]
+    },
+    {
+      "id": "form-input",
+      "genre": "forms",
+      "label": "Labeled input",
+      "functional_requirements": [
+        "visible label",
+        "help or error text",
+        "focus indication"
+      ],
+      "pattern_ids": [
+        "form-accessible",
+        "form-compact",
+        "form-friendly"
+      ],
+      "research_sources": [
+        "shadcn-ui",
+        "radix-primitives",
+        "toggle-supply"
+      ]
+    },
+    {
+      "id": "settings-toggle",
+      "genre": "forms",
+      "label": "Settings toggle",
+      "functional_requirements": [
+        "accessible name",
+        "state confirmation",
+        "minimum touch size"
+      ],
+      "pattern_ids": [
+        "form-accessible",
+        "form-compact",
+        "form-friendly"
+      ],
+      "research_sources": [
+        "shadcn-ui",
+        "radix-primitives",
+        "viora-ui"
+      ]
+    },
+    {
+      "id": "notification",
+      "genre": "forms",
+      "label": "Notification and feedback",
+      "functional_requirements": [
+        "clear error/success text",
+        "non-blocking",
+        "reasonable timing"
+      ],
+      "pattern_ids": [
+        "form-accessible",
+        "form-friendly"
+      ],
+      "research_sources": [
+        "shadcn-ui",
+        "radix-primitives"
+      ]
+    },
+    {
+      "id": "loading-feedback",
+      "genre": "forms",
+      "label": "Loading and progress",
+      "functional_requirements": [
+        "accessible progress",
+        "reduced motion fallback",
+        "accurate status"
+      ],
+      "pattern_ids": [
+        "form-accessible",
+        "form-compact"
+      ],
+      "research_sources": [
+        "tween-ui",
+        "motion-primitives"
+      ]
+    }
+  ]
+}
