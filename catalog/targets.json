@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "targets": [
+    {
+      "id": "react-web",
+      "label": "React Web / Next.js",
+      "family": "web",
+      "technology": [
+        "react",
+        "javascript",
+        "typescript",
+        "css"
+      ],
+      "notes": "React browser runtime; not React Native."
+    },
+    {
+      "id": "vanilla-web",
+      "label": "Vanilla HTML/CSS/JS",
+      "family": "web",
+      "technology": [
+        "html",
+        "css",
+        "javascript"
+      ],
+      "notes": "Browser UI without React/Vue components."
+    },
+    {
+      "id": "vue-web",
+      "label": "Vue Web",
+      "family": "web",
+      "technology": [
+        "vue",
+        "javascript",
+        "typescript"
+      ],
+      "notes": "Vue UI runtime; React component source is not directly reusable."
+    },
+    {
+      "id": "javafx-desktop",
+      "label": "JavaFX Desktop",
+      "family": "desktop",
+      "technology": [
+        "java",
+        "javafx",
+        "css"
+      ],
+      "notes": "Native JavaFX controls/scene graph; browser React/CSS is not an importable runtime."
+    },
+    {
+      "id": "android-compose",
+      "label": "Android Jetpack Compose",
+      "family": "android",
+      "technology": [
+        "kotlin",
+        "jetpack-compose"
+      ],
+      "notes": "Native Compose runtime; distinguish from legacy XML/View UI and from React Native."
+    },
+    {
+      "id": "android-views",
+      "label": "Android Views/XML",
+      "family": "android",
+      "technology": [
+        "java",
+        "kotlin",
+        "views",
+        "xml"
+      ],
+      "notes": "Existing native View/XML UI; Compose components require interop/migration."
+    },
+    {
+      "id": "minecraft-forge-gui",
+      "label": "Minecraft Forge GUI",
+      "family": "minecraft",
+      "technology": [
+        "java",
+        "forge",
+        "minecraft"
+      ],
+      "notes": "Forge 1.20.1-oriented GUI implementation. Fabric UI APIs are not directly compatible."
+    },
+    {
+      "id": "minecraft-fabric-gui",
+      "label": "Minecraft Fabric GUI",
+      "family": "minecraft",
+      "technology": [
+        "java",
+        "fabric",
+        "minecraft"
+      ],
+      "notes": "Fabric GUI implementation. Forge-only code is not directly compatible."
+    }
+  ]
+}

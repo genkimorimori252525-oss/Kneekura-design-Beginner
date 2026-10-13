@@ -13,7 +13,11 @@
         "shadcn-ui",
         "radix-primitives",
         "morphin",
-        "lucide"
+        "lucide",
+        "androidx-compose",
+        "android-material-views",
+        "atlantafx",
+        "materialfx"
       ],
       "checks": [
         "Keyboard navigation",
@@ -54,7 +58,9 @@
         "shadcn-ui",
         "radix-primitives",
         "scrollx-ui",
-        "toggle-supply"
+        "toggle-supply",
+        "materialfx",
+        "androidx-compose"
       ],
       "checks": [
         "Readable tables and charts",
@@ -93,6 +99,7 @@
       ],
       "source_ids": [
         "atlantafx",
+        "materialfx",
         "lucide",
         "dtcg"
       ],
@@ -139,6 +146,48 @@
         "Image reuse permission",
         "No remote-code execution",
         "Fast filtering"
+      ]
+    },
+    {
+      "id": "android-native-ui",
+      "label": "Android native application",
+      "objective": "Select UI components matching actual Compose or existing Views app, without mixing both runtimes.",
+      "preferred_stack": [
+        "android-compose",
+        "android-views"
+      ],
+      "source_ids": [
+        "androidx-compose",
+        "android-material-views",
+        "lucide",
+        "dtcg"
+      ],
+      "checks": [
+        "Identify Compose vs Views in existing app",
+        "Avoid unwanted migration",
+        "Touch targets and accessibility",
+        "Respect older-device performance"
+      ]
+    },
+    {
+      "id": "minecraft-gui",
+      "label": "Minecraft mod GUI",
+      "objective": "Prototype in-game screen and HUD ideas without importing UI code from the wrong loader/runtime.",
+      "preferred_stack": [
+        "minecraft-forge-gui",
+        "minecraft-fabric-gui"
+      ],
+      "source_ids": [
+        "fabric-libgui",
+        "lucide",
+        "atlantafx",
+        "toggle-supply"
+      ],
+      "checks": [
+        "Confirm Forge vs Fabric and exact Minecraft version",
+        "Do not import Fabric-only code into Forge",
+        "Implement with target native rendering and input",
+        "Check scale, mouse/keyboard and frame time"
       ]
     }
   ]

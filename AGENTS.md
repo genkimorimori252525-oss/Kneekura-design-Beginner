@@ -1,14 +1,14 @@
-# Kneekura Design Beginner — Agent Rules
+# Kneekura Design Beginner — AI Operating Rules
 
-Goal: Find and evaluate **useful** visual patterns for the consuming project, not blindly restyle it.
+**Primary consumer: AI coding agents. Purpose: personal design research and better UI decisions, NOT a component product or distribution registry.**
 
-1. Read `catalog/use-cases.json`, then search `catalog/sources.json`. Select by user goal and actual target stack.
-2. **Do not copy third-party source, screenshots, fonts, or templates into this repository.** Metadata and original commentary only, unless a separately reviewed rights record authorizes inclusion.
-3. A project's README saying "MIT" is not sufficient: check the actual LICENSE / item terms. `restricted`, `unverified`, `site_claim_only`, `service_terms` and `spec_reference` mean reference-only by default.
-4. Installing or adapting code **in a consumer project** is a distinct action: review exact rights, dependencies, upstream version, licenses, security, and platform compatibility first.
-5. Keep native UI native: JavaFX is not React. Refer to visual principles without claiming source portability.
-6. Prefer existing working UI when adequate. For any proposed revision, distinguish verified defect, potential risk, and optional improvement. No cosmetic change solely to manufacture an issue.
-7. Preserve working behavior; check responsiveness, keyboard/screen-reader access, focus, contrast, reduced motion, performance, and visual consistency.
-8. Do not add design kits, runtime dependencies, MCP services, automatic scrapers, or previews unless actually needed. No credential storage in this repository.
-9. Run `node tools/catalog.mjs validate` and `node tools/catalog.mjs self-test` after catalog changes.
-10. Keep entries factual, sourced, concise, and dated. Do not invent project maturity, license permissions, or unsupported features.
+1. Identify the target project and inspect its **actual** UI stack, runtime, version, design constraints, and current behavior before retrieving design patterns. Ask only when this cannot be determined.
+2. Match `catalog/use-cases.json` (user goal), `catalog/genres.json` (component purpose), `catalog/targets.json` (runtime), then `catalog/compatibility.json` (code fit vs visual-reference fit). Query with `node tools/catalog.mjs recommend <use-case> --target <target> --json`.
+3. **Never confuse compatibility axes:** `code=incompatible` prevents direct importing of that runtime's code, but `visual=high/medium` permits original native reimplementation of the design idea. `code=direct` is a technical claim, not license authorization. `code=unverified` must not be treated as direct.
+4. **No blind UI rewriting.** Project outcome outranks user-pleasing overcorrection. Distinguish (a) verified functional defect, (b) plausible risk, (c) optional style improvement. `NO_CHANGE_NEEDED` is a valid final recommendation.
+5. **Original application source and design research are separate.** This publicly visible research repo stores metadata and original notes, not unverified third-party components, commercial assets, screenshots, or fonts. `reference-only` is a catalog-storage policy; personal consumption of an upstream library is determined by actual terms per item.
+6. Protect current functionality. Prototype only the minimum necessary; validate mobile/desktop scaling, keyboard/focus/touch access, text contrast, reduced motion, startup/runtime performance, compatibility with the current stack, and regressions.
+7. Do not assume React equals Vue/JavaFX/Android/Forge; Compose != Views; Minecraft Forge != Fabric. Do not offer ports that are not verified.
+8. The owner plans to make this repository private later; do not change visibility or add required credentials. CI may run while public. Avoid external APIs and keep the catalog runnable with Node.js alone.
+9. Run `node tools/catalog.mjs validate` and `node tools/catalog.mjs self-test` after edits. Keep source IDs and target IDs stable; update genres, compatibility and use-case refs together.
+10. Record any uncertain availability/license/version as `unverified`; never invent compatibility or permissions.

@@ -1,55 +1,59 @@
 # Kneekura Design Beginner
 
-**AI-readable design research catalog · not a dump of third-party UI source code.**
+**Private-use oriented, AI-first design research for Kneekura projects.**
 
-にーくらのWeb・AIアプリ・JavaFX研究ツールなどに使えるデザイン資料を、**出典・用途・技術スタック・ライセンス**とともに整理するリポジトリ。
+にーくらの各開発プロジェクトで、**AIが適切なUIデザインを探し、技術的に適用できるか判断する**ための個人用デザイン研究リポジトリ。
 
-## 方針
+> 現在のGitHubリポジトリは公開設定だが、配布用プロジェクトではない。設計とCIが落ち着いたら非公開にする予定。公開・非公開の切り替えは所有者が判断する。ソースコードや有料素材を外部サイトからまとめて転載する用途にはしない。
 
-- **目的優先**：UIを派手にするためだけに正常な画面を作り直さない。
-- **カタログと実装の分離**：外部の作品は原則リンクで記録。実装コードを再配布する前に個別の権利を確認する。
-- **AIが探しやすい**：JSONカタログ＋用途別ガイド＋軽量なCLIで、Codexなどが必要な候補に到達できる。
-- **Web以外も対象**：Reactに限定せず、JavaFX・ネイティブUI・アイコン・デザイントークンまで研究する。
-- **必要最小限の導入**：依存関係、操作性、性能、アクセシビリティ、既存動作への影響を必ず確認する。
+## AIが使うための4つの索引
 
-## クイックスタート（Node.js 20以降・追加パッケージ不要）
+- **目的別**：AIチャット、管理画面、研究ツール、Minecraft GUI、Android UIなど9用途（`catalog/use-cases.json`）。
+- **ジャンル別**：チャット、フォーム、ナビゲーション、アニメーション、ノードグラフなど14ジャンル（`catalog/genres.json`）。
+- **実装環境別**：React／HTML／Vue／JavaFX／Android Compose／Android Views／Minecraft Forge／Fabric（`catalog/targets.json`）。
+- **互換性別**：コードを使えるか（`direct / adapt / incompatible / unverified / tool-only`）と、見た目を参考にできるか（`high / medium / low / none`）を**別々に**判定（`catalog/compatibility.json`）。
+
+コードが非互換でも、レイアウトや配色の参考になるケースは多い。一方、ReactコンポーネントをJavaFXやForgeへ直接移植できると誤判定してはいけない。
+
+## Codexなどのエージェント向けクイックスタート
+
+追加パッケージ不要。Node.js 20以降。
 
 ```bash
 node tools/catalog.mjs validate
-node tools/catalog.mjs list
-node tools/catalog.mjs search chat
-node tools/catalog.mjs search --tag animation
-node tools/catalog.mjs search --stack javafx
-node tools/catalog.mjs search --license restricted --json
 node tools/catalog.mjs self-test
+node tools/catalog.mjs recommend ai-chat --target react-web --json
+node tools/catalog.mjs recommend minecraft-gui --target minecraft-forge-gui
+node tools/catalog.mjs search --genre motion --target react-web --code direct
+node tools/catalog.mjs search --target javafx-desktop --code incompatible
+node tools/catalog.mjs search chat --json
 ```
 
-## まず見たいソース
+**最重要**：`AGENTS.md`、`docs/AI_WORKFLOW.md`、`catalog/targets.json` を読む。実装する前に利用先のコードを確認し、**無理に修正点を探さない**。既存UIが目的を満たしていれば「変更不要」を正解とする。
 
-| 用途 | リポジトリ / サイト | 備考 |
+## 登録例
+
+| ライブラリ | 主に対応する環境 | AIにとっての役割 |
 | --- | --- | --- |
-| 基本UI・配布方式 | [shadcn/ui](https://github.com/shadcn-ui/ui) | Registry設計を参考に |
-| アニメーション | [Tween UI](https://github.com/StaticMania/tween-ui) | GSAPを必要な箇所に限定 |
-| UI全般 | [ScrollX UI](https://github.com/Adityakishore0/ScrollX-UI) | **再配布制限あり・参照専用** |
-| AIチャット参考 | [Morphin](https://morphin.dev/) | 公開RegistryにはLICENSEなし |
-| Web演出 | [Magic UI](https://github.com/magicuidesign/magicui) | オープンソース部分と有料部分を区別 |
-| JavaFX | [AtlantaFX](https://github.com/mkpaz/atlantafx) | ネイティブテーマ |
-| デザイントークン | [DTCG](https://github.com/design-tokens/community-group) | 仕様の参考 |
+| [shadcn/ui](https://github.com/shadcn-ui/ui) | React Web | UI基盤・フォーム |
+| [Tween UI](https://github.com/StaticMania/tween-ui) | React Web | アニメーション |
+| [Toggle Supply](https://github.com/jaretpeerson/toggleSupply) | HTML/CSS/JS、Reactへ適応 | 軽量演出 |
+| [AtlantaFX](https://github.com/mkpaz/atlantafx) | JavaFX | デスクトップテーマ |
+| [AndroidX Compose](https://github.com/androidx/androidx) | Android Compose | AndroidネイティブUI |
+| [Material Components Android](https://github.com/material-components/material-components-android) | Android Views | 既存View画面（2026年時点で保守モード） |
+| [LibGui](https://github.com/CottonMC/LibGui) | Minecraft Fabric | GUIの参考、Forgeには直接非対応 |
 
-上記以外にViora UI、Toggle Supply、DesignPass、React Bits、Radix、Lucide、Motion Primitives、Storybook、21st.devも登録済み。詳細は `catalog/sources.json`。
+元画像のMorphin、Viora UI、Tween UI、ScrollX UI、Toggle Supply、DesignPassも登録済み。詳しくは `catalog/sources.json`。
 
-## 構成
+## フォルダ
 
-- `catalog/sources.json` — 出典、技術、ジャンル、利用条件、採用方法を収録した機械可読カタログ
-- `catalog/use-cases.json` — チャット、管理画面、AI部署、JavaFXなど目的別の選択ガイド
-- `tools/catalog.mjs` — 検索・検証コマンド（ネットワーク不要）
-- `AGENTS.md` — Codexや他のコーディングAIが守る短い作業ルール
-- `docs/ARCHITECTURE.md` — 将来のプレビューと独自Registryまでの設計
-- `docs/SOURCE_POLICY.md` — ライセンスと出典の扱い
-- `docs/ROADMAP.md` — 段階的な開発方針
+- `catalog/` — 20件のソース、ジャンル、ターゲット、技術互換性、用途別選択肢
+- `tools/catalog.mjs` — AIが実行できる検索・目的別推薦・整合性検証
+- `AGENTS.md` — AIの判断ルール
+- `docs/AI_WORKFLOW.md` — AIが既存プロジェクトへデザインを導入する判断順序
+- `docs/ARCHITECTURE.md` — 個人研究用の内部アーキテクチャ
+- `docs/SOURCE_POLICY.md` — 出典と権利、公開設定と個人利用の区別
+- `docs/ROADMAP.md` — 研究機能の今後
+- `examples/` — 実際の検討方法（他社コードのコピーではない）
 
-## Codexに渡す例
-
-> このリポジトリのAGENTS.mdとcatalog/use-cases.jsonを読み、AIチャット画面に合うデザイン候補を比較して。導入前に対象プロジェクトの技術、権利、既存UI、性能を確認し、変更の必要がなければ修正不要と結論してよい。
-
-**注意**：このリポジトリは第三者のコンポーネントを再配布していない。カタログ内の外部リンク先のライセンスを本リポジトリ全体のライセンスと解釈しないこと。
+**本リポジトリはUI製品、再配布用パッケージ、デザイン販売サイトではない。** カタログ内の`reference-only`は「この公開リポジトリへ他社コードを保存しない」という方針であり、各自の許諾された個人利用を一律に否定するものではない。

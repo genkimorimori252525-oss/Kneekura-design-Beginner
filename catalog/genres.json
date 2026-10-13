@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "genres": [
+    {
+      "id": "chat",
+      "label": "Chat and messaging UI",
+      "goal": "Conversation bubbles, composer, states, avatars."
+    },
+    {
+      "id": "navigation",
+      "label": "Navigation and layout",
+      "goal": "Sidebars, tabs, headers, panels and menus."
+    },
+    {
+      "id": "forms",
+      "label": "Forms and controls",
+      "goal": "Buttons, inputs, selects, toggles and dialogs."
+    },
+    {
+      "id": "motion",
+      "label": "Motion and feedback",
+      "goal": "Subtle transitions, loading states and interaction feedback."
+    },
+    {
+      "id": "background-effects",
+      "label": "Backgrounds and visual effects",
+      "goal": "Decorative imagery and text effects where justified."
+    },
+    {
+      "id": "dashboards",
+      "label": "Dashboards and data UI",
+      "goal": "Readable status, metrics, tables and workspace panels."
+    },
+    {
+      "id": "node-graphs",
+      "label": "Graphs and agent flow",
+      "goal": "Nodes, edges, agent relationships and workflow inspection."
+    },
+    {
+      "id": "icons",
+      "label": "Iconography",
+      "goal": "Consistent action and status symbols."
+    },
+    {
+      "id": "tokens",
+      "label": "Design tokens and themes",
+      "goal": "Consistent cross-project colors, spacing and typography."
+    },
+    {
+      "id": "desktop-ui",
+      "label": "Native desktop UI",
+      "goal": "JavaFX controls and desktop-compatible design."
+    },
+    {
+      "id": "accessibility",
+      "label": "Accessible foundations",
+      "goal": "Keyboard focus, semantic controls and contrast."
+    },
+    {
+      "id": "minecraft-ui",
+      "label": "Minecraft in-game UI",
+      "goal": "Game-native panels, slots, HUD and screen layout."
+    },
+    {
+      "id": "android-ui",
+      "label": "Android native UI",
+      "goal": "Android platform controls and visual standards."
+    },
+    {
+      "id": "dev-tools",
+      "label": "Design inspection tools",
+      "goal": "Previews, component references, documentation and agent search."
+    }
+  ],
+  "assignments": {
+    "morphin": [
+      "chat",
+      "navigation",
+      "motion"
+    ],
+    "viora-ui": [
+      "navigation",
+      "forms",
+      "motion"
+    ],
+    "tween-ui": [
+      "motion",
+      "forms"
+    ],
+    "scrollx-ui": [
+      "navigation",
+      "forms",
+      "motion",
+      "dashboards"
+    ],
+    "toggle-supply": [
+      "navigation",
+      "forms",
+      "motion"
+    ],
+    "designpass": [
+      "node-graphs",
+      "motion",
+      "forms"
+    ],
+    "shadcn-ui": [
+      "navigation",
+      "forms",
+      "dashboards",
+      "accessibility"
+    ],
+    "magic-ui": [
+      "motion",
+      "background-effects",
+      "dashboards"
+    ],
+    "react-bits": [
+      "motion",
+      "background-effects"
+    ],
+    "motion-primitives": [
+      "motion",
+      "forms"
+    ],
+    "radix-primitives": [
+      "forms",
+      "accessibility"
+    ],
+    "lucide": [
+      "icons"
+    ],
+    "atlantafx": [
+      "desktop-ui",
+      "navigation",
+      "forms",
+      "tokens"
+    ],
+    "storybook": [
+      "dev-tools"
+    ],
+    "21st-dev": [
+      "dev-tools"
+    ],
+    "dtcg": [
+      "tokens"
+    ],
+    "androidx-compose": [
+      "android-ui",
+      "forms",
+      "navigation",
+      "tokens"
+    ],
+    "android-material-views": [
+      "android-ui",
+      "forms",
+      "navigation",
+      "tokens"
+    ],
+    "materialfx": [
+      "desktop-ui",
+      "forms",
+      "navigation",
+      "tokens"
+    ],
+    "fabric-libgui": [
+      "minecraft-ui",
+      "forms",
+      "navigation"
+    ]
+  }
+}

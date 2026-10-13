@@ -412,6 +412,110 @@
       "adoption": "reference-only",
       "notes": "Recommended basis for reusable colors, typography, spacing and theme token formats.",
       "verified_on": "2026-10-13"
+    },
+    {
+      "id": "androidx-compose",
+      "name": "AndroidX / Jetpack Compose",
+      "kind": "framework",
+      "website": "https://developer.android.com/compose",
+      "repository": "https://github.com/androidx/androidx",
+      "stack": [
+        "kotlin",
+        "android",
+        "jetpack-compose"
+      ],
+      "tags": [
+        "android",
+        "forms",
+        "navigation",
+        "design-system"
+      ],
+      "license": {
+        "state": "permissive_verified",
+        "label": "Apache-2.0",
+        "evidence": "https://github.com/androidx/androidx/blob/androidx-main/LICENSE.txt"
+      },
+      "adoption": "review-upstream",
+      "notes": "AndroidX contains Jetpack Compose UI/Material components for Android native Compose projects. Repository includes many other modules; only evaluate relevant Compose packages.",
+      "verified_on": "2026-10-13"
+    },
+    {
+      "id": "android-material-views",
+      "name": "Material Components for Android (Views)",
+      "kind": "components",
+      "website": "https://github.com/material-components/material-components-android",
+      "repository": "https://github.com/material-components/material-components-android",
+      "stack": [
+        "kotlin",
+        "java",
+        "android",
+        "views"
+      ],
+      "tags": [
+        "android",
+        "forms",
+        "navigation",
+        "design-system"
+      ],
+      "license": {
+        "state": "permissive_verified",
+        "label": "Apache-2.0",
+        "evidence": "https://github.com/material-components/material-components-android/blob/master/LICENSE"
+      },
+      "adoption": "review-upstream",
+      "notes": "Google's Views-based Material Components. README declares maintenance mode as of 2026; generally prefer Compose for new Android UI, but Views may be right for an existing Views-based app.",
+      "verified_on": "2026-10-13"
+    },
+    {
+      "id": "materialfx",
+      "name": "MaterialFX",
+      "kind": "desktop-components",
+      "website": "https://github.com/palexdev/MaterialFX",
+      "repository": "https://github.com/palexdev/MaterialFX",
+      "stack": [
+        "java",
+        "javafx",
+        "css"
+      ],
+      "tags": [
+        "desktop",
+        "forms",
+        "navigation",
+        "design-system"
+      ],
+      "license": {
+        "state": "conditional_verified",
+        "label": "LGPL-3.0",
+        "evidence": "https://github.com/palexdev/MaterialFX/blob/main/LICENSE"
+      },
+      "adoption": "review-upstream",
+      "notes": "Material-styled JavaFX controls; respect LGPL-3.0 and transitive dependency terms. Validate JavaFX compatibility and maintenance before adding.",
+      "verified_on": "2026-10-13"
+    },
+    {
+      "id": "fabric-libgui",
+      "name": "LibGui (Fabric GUI toolkit)",
+      "kind": "minecraft-components",
+      "website": "https://github.com/CottonMC/LibGui",
+      "repository": "https://github.com/CottonMC/LibGui",
+      "stack": [
+        "java",
+        "minecraft",
+        "fabric"
+      ],
+      "tags": [
+        "minecraft",
+        "forms",
+        "navigation"
+      ],
+      "license": {
+        "state": "permissive_verified",
+        "label": "MIT",
+        "evidence": "https://github.com/CottonMC/LibGui/blob/master/LICENSE"
+      },
+      "adoption": "review-upstream",
+      "notes": "Minecraft GUI layout toolkit for Fabric. **Not a native Forge GUI dependency**; inspect conceptual layouts only for Forge, without assuming Fabric code can run there.",
+      "verified_on": "2026-10-13"
     }
   ]
 }

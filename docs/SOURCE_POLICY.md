@@ -1,23 +1,29 @@
-# External source and licensing policy
+# Sources, licences, and the temporary public repository
 
-This repository catalogs **links and our own descriptions**, not third-party software.
+**Intended use: personal hobby/research with AI agents. No distribution of a component kit, no commercial UI library.** The repository is currently public for development/CI; the owner intends to make it private later.
 
-- Always read the **actual** upstream LICENSE and item-specific terms. A README license badge and website marketing copy can disagree with binding terms.
-- `permissive_verified`: a license file for the named upstream repository was inspected, but **not** every bundled dependency or paid asset. A consumer must re-check exact files and notices when using them.
-- `restricted`: do not copy, mirror, bundle or port external components here. Reference-only until rights are explicitly confirmed for a particular use.
-- `unverified`: no adequate licensing evidence found; no permission for repository copying should be inferred.
-- `site_claim_only`: the website advertises permission but a matching code license or complete repository has not been verified.
-- `service_terms`: access or downloads may be subject to API, account, premium or per-item conditions.
-- `spec_reference`: a standards reference is not a component/source license.
+## Distinguish three independent questions
 
-## Special cases verified on 2026-10-13
+1. **Technical fit:** can code run on a specific target stack? See `catalog/compatibility.json`.
+2. **Design-reference value:** can its layout/color/motion ideas guide a new implementation? Same file, separate field.
+3. **Rights and storage:** can a component/source/asset be used locally or copied into *this GitHub repo*? See upstream item-specific licences and `catalog/sources.json`.
 
-- **ScrollX UI**: repository README says MIT, but `LICENSE.md` additionally includes Commons Clause restrictions on redistributing a component library, a template/UI kit, competing products and alternate-technology ports. Reference-only in this research repo.
-- **React Bits**: `MIT + Commons Clause`; redistribution of components as a bundle or port is restricted. Reference-only here.
-- **Morphin Registry**: its README states there is currently no LICENSE file. Do not assume the published source can be mirrored.
-- **Viora UI**: public GitHub repository is a short README; no LICENSE file verified. Reference-only here.
-- **DesignPass**: website says its free components are MIT, while the public GitHub repository is a blank placeholder. Check the actual published item terms before storing code.
+Being private later does not retroactively authorize publishing third-party source now; neither public nor private status alone overrides actual licence terms.
 
-For all other entries, inspect the catalog's license-evidence URL. When a future owned implementation incorporates third-party code under applicable terms, keep original license notices, file-level attribution, and version/permalink evidence. Do not mix these files into a single supposedly MIT-licensed bundle.
+**`reference-only` means no copying that source into this public research catalog without confirmed rights.** It does not imply that all personal installation, local execution, or independent design inspiration is forbidden. `review-upstream` means the identified upstream licence appears to support use subject to its terms; still verify actual item, version and dependencies before adoption.
 
-This is a conservative curation policy, not legal advice.
+## Important source findings (2026-10-13)
+
+- **ScrollX UI:** the actual `LICENSE.md` has Commons Clause restrictions on redistribution and competing libraries; README's brief MIT statement is incomplete. Local use may be permitted under specific conditions. Do not mirror into this research repo.
+- **React Bits:** MIT + Commons Clause; verify the actual use conditions per item.
+- **Morphin Registry:** no applicable license file located, and the README says no LICENSE is present. No assumption of redistribution rights.
+- **Viora UI:** public repo presently offers mostly README information. The actual component licensing/source availability is not verified.
+- **DesignPass:** site advertises MIT for free items but the GitHub repo contains a blank placeholder; verify specific files/items.
+- **MaterialFX:** LGPL-3.0, not equivalent to MIT. Using it privately and distributing a derivative have different obligations.
+- **Material Components for Android Views:** Apache-2.0 but maintenance mode; do not recommend it as the default new Android UI stack without checking context.
+
+The catalog itself consists of original descriptions, categorization, source URLs and reasoning, not bundled third-party UI code/assets. Do not commit downloaded fonts, screenshots, icons, or commercial templates unless provenance and rights are reviewed.
+
+## Safe local adoption workflow
+
+Check the upstream licence for the exact source/version, then inspect transitive dependencies, ensure target compatibility, preserve required notices where applicable, and implement in the **consuming project**, not this research catalog. Not legal advice.

@@ -1,10 +1,9 @@
-# Example: researching an AI chat screen
+# AI chat design selection — example only
 
-Goal: a stable, readable chat page for AI collaboration, with keyboard support and concise status feedback.
+Goal: a clear, stable conversation interface. Evaluate compatibility **before** suggesting code.
 
-1. Run `node tools/catalog.mjs search chat`.
-2. Evaluate shadcn/ui and Radix as **foundations**; Morphin as **reference** for chat-specific styling.
-3. Check whether the target is React or JavaFX before choosing implementation.
-4. Examine the existing layout; only modify proven usability shortcomings.
-5. If a prototype is warranted, try one component **in an isolated branch**, test sending/scroll/focus/error states and reduced motion, and compare costs before merging.
-6. Record evidence and upstream license notices. Do not copy Morphin Registry code into this catalog.
+- React web app: `node tools/catalog.mjs recommend ai-chat --target react-web --json`. shadcn/ui may fit technically, Morphin could inspire chat-specific UI, but each actual component's source/terms must be checked.
+- Native JavaFX app: `node tools/catalog.mjs recommend ai-chat --target javafx-desktop --json`. A React source is `incompatible` as importable code even when `visual=medium/high`. Use JavaFX-native controls/theme instead.
+- Minecraft Forge 1.20.1 screen: `node tools/catalog.mjs recommend minecraft-gui --target minecraft-forge-gui --json`. Fabric LibGui code is not a drop-in Forge dependency; treat its layouts as visual references only.
+
+In every case, first inspect the existing UI. If it already meets the functional goal, the correct design decision can be `NO_CHANGE_NEEDED`.
