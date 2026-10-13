@@ -1,44 +1,44 @@
-# AI decision procedure (design is selected for the project, not the reverse)
+# AI workflow — inspecting, choosing, implementing and verifying design
 
-## Required input (inspect repository first)
+## 1. Inspect before styling
 
-Target application, user task, current screen/component, actual UI runtime + version, and constraints (performance, accessibility, dependencies, preservation of behavior).
+Read current screens and their implementation, target framework/version, user's desired outcome, and performance/accessibility constraints. Determine if there is a **verified** usability defect, credible risk, or merely aesthetic curiosity.
 
-## Deterministic workflow
+If the existing design is adequate, produce `NO_CHANGE_NEEDED` and do not modify code. The AI is not rewarded for finding imaginary faults.
 
-1. Resolve the `target` from `catalog/targets.json` (if the project has multiple UI frontends, evaluate each separately).
-2. Match user goal to `catalog/use-cases.json` and narrower UI genre to `catalog/genres.json`.
-3. Run `node tools/catalog.mjs recommend <use-case> --target <target> --json`.
-4. For a candidate, read `catalog/compatibility.json`: 
-   - `direct`: code matches target runtime (actual version and integration still require checking);
-   - `adapt`: needs wrapper/conversion;
-   - `incompatible`: **do not import source code**, but `visual=medium/high` means visual ideas may be implemented independently;
-   - `unverified`: research first;
-   - `tool-only`: not an application UI component.
-5. Check `catalog/sources.json` for **distinct license/catalog storage handling**. `reference-only` does NOT prohibit all local private use; it prohibits copying it into this publicly visible research repo without documented rights.
-6. Compare candidates with the existing working UI. If function and user experience already meet objectives, output `NO_CHANGE_NEEDED` and stop.
-7. If work is justified, implement a minimal scoped change in the actual target project's native stack, verify visually and functionally, and report evidence.
+## 2. Locate individual components and reusable ideas
 
-## Minimum machine-readable decision record
+- Search source catalog: `node tools/catalog.mjs recommend ai-chat --target react-web --json`.
+- Browse 12 component needs: `node tools/design-select.mjs components --genre chat --json`.
+- Keep **source technical compatibility** (code can run?) distinct from **visual inspiration** (can an idea be recreated natively?).
+- Before copying external code into an actual application, re-check upstream rights for that component/version/dependency. Do not mirror third-party packages here.
 
-```json
-{
-  "target": "minecraft-forge-gui",
-  "genre": "minecraft-ui",
-  "candidate_id": "fabric-libgui",
-  "code_compatibility": "incompatible",
-  "visual_reuse": "high",
-  "decision": "visual-reference-only",
-  "reason": "Fabric-specific GUI code does not run directly under Forge",
-  "next_step": "Use Forge's native screen/rendering APIs if a change is genuinely necessary"
-}
-```
+## 3. Write a machine-readable project brief
 
-This example is a *sample decision record*, not a claim that any change is required.
+Clone/adapt an `examples/brief-*.json` into a new, factual brief. Specify exact target, genre, desired tone/density/motion/contrast, non-negotiable effort/motion/contrast constraints, `current_ui_sufficient`, and intent tags.
 
-## Hard constraints
+`node tools/design-select.mjs shortlist <brief> --json`
 
-- Never declare that incompatible code is installable as-is.
-- Never treat a permissive visual layout as automatic permission to mirror copyrighted assets.
-- Do not introduce framework-wide rewrites, style changes, preview sites, or a private/public GitHub toggle solely to improve the design catalog.
-- Report verified defects, risks, and optional improvements separately. Avoid changing a healthy design only because the user asked to look for improvements.
+Read reasons, tradeoffs, and vetoes. **Rule-based rankings only filter candidates**.
+
+## 4. AI makes the choice
+
+When visual inspection is available, run `node tools/serve-gallery.mjs` and inspect `http://127.0.0.1:4173/` with the permitted browser/screenshot workflow. Use the working demos to inspect hierarchy, density, affordances, and failure states. Compare the alternatives against the **real target UI**.
+
+Without a browser/screenshot tool, do not claim to have seen a design; use metadata and mark selection `PROVISIONAL_SELECTION`.
+
+An AI agent must explicitly choose a pattern, justify why it fits, name what is sacrificed and note alternatives. The AI may override metadata score ranking. Use the `choose` command to write an immutable decision receipt and `verify` it. No model API key is required: the AI operating in the coding tool is the decision maker.
+
+## 5. Implement only what is needed
+
+Borrow visual structure or original source only when allowed; keep code in the consuming project's native runtime. Browser concepts are **not ready-made** JavaFX/Minecraft/Android components. Preserve behavior, perform real responsiveness/focus/reduced-motion/error testing, verify performance and revert regressions.
+
+## 6. Report evidence and uncertainty
+
+Say whether the receipt is SELECTED, PROVISIONAL_SELECTION, or NO_CHANGE_NEEDED. Provide the brief, chosen ID, evaluated alternatives, real observations, technical and license limitations, verified tests, and what remains uncertain.
+
+## Example
+
+A Forge 1.20.1 UI cannot directly import Fabric-only LibGui code. However, a selected `graph-linear` visual layout can guide a **new Forge-native implementation** if a real UI task justifies it.
+
+Do not let "can imagine the look" become "verified to work in Forge".

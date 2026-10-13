@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "id": "agents-workspace-graph",
+  "project": "Kneekura multi-agent workbench",
+  "goal": "Visualize the state and communication links between five Sol/Astra departments without hiding status or slowing the operator screen.",
+  "target": "react-web",
+  "genre": "node-graphs",
+  "current_ui_sufficient": false,
+  "desired": {
+    "tone": "technical",
+    "density": "dense",
+    "motion": "none",
+    "contrast": "high"
+  },
+  "constraints": {
+    "max_effort": "medium",
+    "max_motion": "subtle",
+    "minimum_contrast": "high"
+  },
+  "intent_tags": [
+    "agents",
+    "pipeline",
+    "debugging"
+  ],
+  "notes": "A demo brief, not an authorization to modify another repository."
+}

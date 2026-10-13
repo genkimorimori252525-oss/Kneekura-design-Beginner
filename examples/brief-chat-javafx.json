@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "id": "chat-readability",
+  "project": "Kneekura local AI",
+  "goal": "Choose a comfortable local chat UI for reading long AI responses and sending messages.",
+  "target": "javafx-desktop",
+  "genre": "chat",
+  "current_ui_sufficient": false,
+  "desired": {
+    "tone": "professional",
+    "density": "comfortable",
+    "motion": "none",
+    "contrast": "high"
+  },
+  "constraints": {
+    "max_effort": "medium",
+    "max_motion": "subtle",
+    "minimum_contrast": "high"
+  },
+  "intent_tags": [
+    "reading",
+    "precision"
+  ],
+  "notes": "Visual concepts only; JavaFX implementation must use native code."
+}

@@ -1,14 +1,34 @@
-# Kneekura Design Beginner — AI Operating Rules
+# AGENTS.md — Kneekura Design Beginner / AI-owned design decisions
 
-**Primary consumer: AI coding agents. Purpose: personal design research and better UI decisions, NOT a component product or distribution registry.**
+This is a personal hobby/research workspace, **not a public UI distribution kit**. The owner may change repository visibility later. The primary user of this knowledge is a coding **AI agent**, not a human shopping a component catalog.
 
-1. Identify the target project and inspect its **actual** UI stack, runtime, version, design constraints, and current behavior before retrieving design patterns. Ask only when this cannot be determined.
-2. Match `catalog/use-cases.json` (user goal), `catalog/genres.json` (component purpose), `catalog/targets.json` (runtime), then `catalog/compatibility.json` (code fit vs visual-reference fit). Query with `node tools/catalog.mjs recommend <use-case> --target <target> --json`.
-3. **Never confuse compatibility axes:** `code=incompatible` prevents direct importing of that runtime's code, but `visual=high/medium` permits original native reimplementation of the design idea. `code=direct` is a technical claim, not license authorization. `code=unverified` must not be treated as direct.
-4. **No blind UI rewriting.** Project outcome outranks user-pleasing overcorrection. Distinguish (a) verified functional defect, (b) plausible risk, (c) optional style improvement. `NO_CHANGE_NEEDED` is a valid final recommendation.
-5. **Original application source and design research are separate.** This publicly visible research repo stores metadata and original notes, not unverified third-party components, commercial assets, screenshots, or fonts. `reference-only` is a catalog-storage policy; personal consumption of an upstream library is determined by actual terms per item.
-6. Protect current functionality. Prototype only the minimum necessary; validate mobile/desktop scaling, keyboard/focus/touch access, text contrast, reduced motion, startup/runtime performance, compatibility with the current stack, and regressions.
-7. Do not assume React equals Vue/JavaFX/Android/Forge; Compose != Views; Minecraft Forge != Fabric. Do not offer ports that are not verified.
-8. The owner plans to make this repository private later; do not change visibility or add required credentials. CI may run while public. Avoid external APIs and keep the catalog runnable with Node.js alone.
-9. Run `node tools/catalog.mjs validate` and `node tools/catalog.mjs self-test` after edits. Keep source IDs and target IDs stable; update genres, compatibility and use-case refs together.
-10. Record any uncertain availability/license/version as `unverified`; never invent compatibility or permissions.
+## Mandatory design-decision sequence
+
+1. **Inspect the destination project first.** Identify actual UI runtime/version, affected screen, behavioral invariants, accessibility/performance constraints. Do not guess. Determine whether the existing UI already meets the task. If yes, a documented `NO_CHANGE_NEEDED` is preferred.
+2. Search external sources by need: `node tools/catalog.mjs recommend <use-case> --target <target> --json`. Cross-check `catalog/component-needs.json`, `catalog/genres.json`, `catalog/compatibility.json`.
+3. For an actual visual choice, write a small project brief matching `examples/brief-agent-workspace.json`. Run `node tools/design-select.mjs shortlist <brief> --json`. Treat scores as **metadata-only preprocessing**. They do **not** measure beauty, screenshots, actual UX, or fit to the current project.
+4. Examine a few possible designs and their weaknesses. For authorized/original concepts, run `node tools/serve-gallery.mjs` and inspect `http://127.0.0.1:4173/` **only if** browser/screenshot tools are available. If no visual inspection can occur, label the decision `PROVISIONAL_SELECTION`; never falsely claim to have seen a preview.
+5. **The LLM agent makes the final choice** by comparing task outcome, visual hierarchy, existing app, cost, operation, and alternatives. Use `node tools/design-select.mjs choose <brief> --design <id> --reason "..." --tradeoff "..." --review metadata|preview [--evidence "..."] --out decisions/<name>.json`, then `verify`. Alternatively choose `--no-change` with substantive reason. Scores NEVER make the decision automatically.
+6. Validate whether using an upstream source is permissible. `code=direct` is merely technical suitability, **not a license**, and the origin of local prototypes is wholly separate from third-party source rights. This currently public index only contains original code and descriptions, not mirrored external UI packages/assets.
+7. Implement only justified changes in the target repository and its native UI stack. Preserve behavior; test real keyboard/focus/touch states, responsive scaling, motion reduction, contrast, and runtime cost. Report test evidence and limitations; do not claim demo behavior proves production readiness.
+
+## Hard refusal to misclassify
+
+- Never import Fabric-specific LibGui into Forge directly, or browser React code directly into JavaFX/Android.
+- Never mix Android Compose and legacy Views without explicit interop.
+- Browser mockups are **visual concepts**, not production-ready components or cross-runtime implementation.
+- Never fabricate screenshots, license permission, accessibility test results, or score confidence.
+- Never rewrite a functioning UI to manufacture a defect. Distinguish VERIFIED_DEFECT, RISK, OPTIONAL_CHANGE, and NO_CHANGE_NEEDED.
+- If the technical/visual evidence does not support a clear winner, document uncertainty rather than pretending an objective "best" exists.
+
+## Checks on repository changes
+
+```bash
+node tools/catalog.mjs validate
+node tools/catalog.mjs self-test
+node tools/design-select.mjs validate
+node tools/design-select.mjs self-test
+node tools/gallery-smoke.mjs
+```
+
+Keep data IDs stable and all references consistent. Do not change GitHub visibility, create mandatory API/paid-service dependencies, or commit unlicensed third-party UI/imagery. Keep user authorization and target project's constraints central.

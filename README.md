@@ -1,59 +1,78 @@
 # Kneekura Design Beginner
 
-**Private-use oriented, AI-first design research for Kneekura projects.**
+**AIがデザインを探し、比較し、選び、理由を残すための個人用研究庫**
 
-にーくらの各開発プロジェクトで、**AIが適切なUIデザインを探し、技術的に適用できるか判断する**ための個人用デザイン研究リポジトリ。
+このリポジトリは配布用UIキットではありません。趣味・研究プロジェクトで使うAIコーディングエージェントが主役。現在は開発とCIのためにGitHubで公開していますが、後日非公開にする想定です（リポジトリの公開設定は所有者が管理）。
 
-> 現在のGitHubリポジトリは公開設定だが、配布用プロジェクトではない。設計とCIが落ち着いたら非公開にする予定。公開・非公開の切り替えは所有者が判断する。ソースコードや有料素材を外部サイトからまとめて転載する用途にはしない。
+## 3つの役割
 
-## AIが使うための4つの索引
+1. **Research / 探す** — 20件の外部資料をジャンル・実装環境・コード互換性で検索（`catalog/sources.json`, `tools/catalog.mjs`）。
+2. **Preview / 見比べる** — 15種類の**オリジナル**UIプロトタイプをローカルで閲覧・操作・2件比較（`gallery/`）。他社コード・画像の一括コピーはしません。
+3. **Choose / AIが決める** — 目的、好み、ハード制約で候補を絞り、**AI自身が採用・仮採用・変更不要を決定**。判断理由、代替案、妥協点、目視の有無を記録（`tools/design-select.mjs`）。
 
-- **目的別**：AIチャット、管理画面、研究ツール、Minecraft GUI、Android UIなど9用途（`catalog/use-cases.json`）。
-- **ジャンル別**：チャット、フォーム、ナビゲーション、アニメーション、ノードグラフなど14ジャンル（`catalog/genres.json`）。
-- **実装環境別**：React／HTML／Vue／JavaFX／Android Compose／Android Views／Minecraft Forge／Fabric（`catalog/targets.json`）。
-- **互換性別**：コードを使えるか（`direct / adapt / incompatible / unverified / tool-only`）と、見た目を参考にできるか（`high / medium / low / none`）を**別々に**判定（`catalog/compatibility.json`）。
+数値による推薦順は**機械的な事前絞り込み**であって、AIの審美眼を偽装したものではありません。CodexなどのLLMエージェントが成果物とプロジェクトを理解して最終選択します。どのデザインも合わなければ採用しなくてかまいません。
 
-コードが非互換でも、レイアウトや配色の参考になるケースは多い。一方、ReactコンポーネントをJavaFXやForgeへ直接移植できると誤判定してはいけない。
+## 最初に実行するコマンド
 
-## Codexなどのエージェント向けクイックスタート
+Node.js 20以降・依存追加なし。
 
-追加パッケージ不要。Node.js 20以降。
+```bash
+# 既存の資料検索（外部コードは取り込まない）
+node tools/catalog.mjs recommend ai-chat --target react-web --json
+node tools/catalog.mjs search --genre motion --target react-web --code direct
+
+# AI用のデザイン候補比較（ハード制約を尊重）
+node tools/design-select.mjs validate
+node tools/design-select.mjs shortlist examples/brief-agent-workspace.json --json
+node tools/design-select.mjs components --genre chat --json
+
+# 15種類のオリジナルUIの実際の見た目をローカルで比較
+node tools/serve-gallery.mjs
+# → http://127.0.0.1:4173/
+```
+
+## AIによる決定記録（API不要）
+
+`shortlist` が返すのは候補であり、確定デザインではありません。**AIが**ブラウザプレビュー（閲覧できる場合）・用途・実装制約を評価して `--design` を指定します。
+
+```bash
+# 画面プレビューを見ていないとき → 仮採用と明示
+node tools/design-select.mjs choose examples/brief-agent-workspace.json \
+  --design graph-linear \
+  --reason "Dense linear pipeline is preferable for diagnostic status inspection." \
+  --tradeoff "Complex branching will need another visualization." \
+  --review metadata \
+  --out decisions/agent-graph-review.json
+
+# 記録された判断が元の要件や制約と一致するか確認
+node tools/design-select.mjs verify decisions/agent-graph-review.json
+```
+
+PowerShellでは複数行の `\` を使わず、1行で実行してください。ブラウザ画面を**実際に観察できた場合だけ** `--review preview --evidence "観察した具体的事実"` を使えます。プレビューが見られない環境では無理に最終確定せず、`PROVISIONAL_SELECTION` として残します。
+
+既存UIが十分なら `--no-change` で `NO_CHANGE_NEEDED` を記録できます。第三者のソースコード互換性と「見た目だけ参考にできるか」は別判定です。
+
+## AIが読むファイル
+
+- `AGENTS.md` — 選択手順・プロジェクト優先・過剰修正防止
+- `docs/SELECTION_ENGINE.md` — 選択エンジンの保証範囲とCLI仕様
+- `docs/AI_WORKFLOW.md` — 既存アプリの調査 → AI選択 → 最小実装 → 検証
+- `catalog/design-patterns.json` — オリジナル15案の特性・長所・弱点・試作品の色
+- `catalog/component-needs.json` — 12種類のUI部品の機能要件と候補
+- `catalog/genres.json`、`catalog/targets.json`、`catalog/compatibility.json` — 14ジャンル、8実行環境、外部ソースの160組の互換性評価
+- `catalog/use-cases.json` — 9つの目的別指針
+- `gallery/` — オフラインの原作コードによるプレビュー。CDN・ログイン・API不要
+
+## 実装・検証
 
 ```bash
 node tools/catalog.mjs validate
 node tools/catalog.mjs self-test
-node tools/catalog.mjs recommend ai-chat --target react-web --json
-node tools/catalog.mjs recommend minecraft-gui --target minecraft-forge-gui
-node tools/catalog.mjs search --genre motion --target react-web --code direct
-node tools/catalog.mjs search --target javafx-desktop --code incompatible
-node tools/catalog.mjs search chat --json
+node tools/design-select.mjs validate
+node tools/design-select.mjs self-test
+node tools/gallery-smoke.mjs
 ```
 
-**最重要**：`AGENTS.md`、`docs/AI_WORKFLOW.md`、`catalog/targets.json` を読む。実装する前に利用先のコードを確認し、**無理に修正点を探さない**。既存UIが目的を満たしていれば「変更不要」を正解とする。
+**重要な区別**：`gallery/` は見た目・操作感を比較するための**ブラウザ試作品**です。ReactやForge、JavaFX、Androidでそのまま動く配布コンポーネントではありません。実アプリの表示、操作、アクセシビリティ、性能を確認したという意味でもありません。
 
-## 登録例
-
-| ライブラリ | 主に対応する環境 | AIにとっての役割 |
-| --- | --- | --- |
-| [shadcn/ui](https://github.com/shadcn-ui/ui) | React Web | UI基盤・フォーム |
-| [Tween UI](https://github.com/StaticMania/tween-ui) | React Web | アニメーション |
-| [Toggle Supply](https://github.com/jaretpeerson/toggleSupply) | HTML/CSS/JS、Reactへ適応 | 軽量演出 |
-| [AtlantaFX](https://github.com/mkpaz/atlantafx) | JavaFX | デスクトップテーマ |
-| [AndroidX Compose](https://github.com/androidx/androidx) | Android Compose | AndroidネイティブUI |
-| [Material Components Android](https://github.com/material-components/material-components-android) | Android Views | 既存View画面（2026年時点で保守モード） |
-| [LibGui](https://github.com/CottonMC/LibGui) | Minecraft Fabric | GUIの参考、Forgeには直接非対応 |
-
-元画像のMorphin、Viora UI、Tween UI、ScrollX UI、Toggle Supply、DesignPassも登録済み。詳しくは `catalog/sources.json`。
-
-## フォルダ
-
-- `catalog/` — 20件のソース、ジャンル、ターゲット、技術互換性、用途別選択肢
-- `tools/catalog.mjs` — AIが実行できる検索・目的別推薦・整合性検証
-- `AGENTS.md` — AIの判断ルール
-- `docs/AI_WORKFLOW.md` — AIが既存プロジェクトへデザインを導入する判断順序
-- `docs/ARCHITECTURE.md` — 個人研究用の内部アーキテクチャ
-- `docs/SOURCE_POLICY.md` — 出典と権利、公開設定と個人利用の区別
-- `docs/ROADMAP.md` — 研究機能の今後
-- `examples/` — 実際の検討方法（他社コードのコピーではない）
-
-**本リポジトリはUI製品、再配布用パッケージ、デザイン販売サイトではない。** カタログ内の`reference-only`は「この公開リポジトリへ他社コードを保存しない」という方針であり、各自の許諾された個人利用を一律に否定するものではない。
+リポジトリの収集数を増やすことより、「AIが適切なデザインを採用するか、採用しないか判断できること」を最優先します。

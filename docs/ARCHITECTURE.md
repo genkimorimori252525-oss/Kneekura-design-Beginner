@@ -1,47 +1,31 @@
-# Architecture — private-use, AI-first research index
+# Architecture — AI-driven personal design research
 
-**Consumer**: AI coding agents maintaining the owner's Kneekura projects. The repository happens to be public during setup/CI; it is not a distribution vehicle. Future private setting will be managed by the owner.
+The repository is a temporary-public **personal research index**, not a package distribution site. The owner will decide when to make it private; CI is deliberately lightweight.
 
-## Data plane (machine-first)
+## Separate layers
 
-- `catalog/sources.json`: known external repositories/websites, licences, stack tags, human-readable notes.
-- `catalog/genres.json`: semantic UI genres and every source's purpose memberships.
-- `catalog/targets.json`: **eight concrete runtime platforms**. Never combine Android Compose/Views or Minecraft Forge/Fabric.
-- `catalog/compatibility.json`: exhaustive source×platform matrix. **Two separate judgments**: implementation-code compatibility and visual inspiration value. This avoids a false binary compatible/incompatible outcome.
-- `catalog/use-cases.json`: user/project tasks mapped to evidence-backed candidate source IDs.
+1. **External source intelligence**: 20 repositories/sites in `catalog/sources.json`, with `catalog/compatibility.json` containing 160 technical-vs-visual platform assessments, `catalog/targets.json` and `catalog/genres.json`.
+2. **Component needs**: `catalog/component-needs.json` (12 explicit UI functions, required behaviors, related external sources). Links signal where to research, **not confirmed upstream component names/paths**.
+3. **Original design space**: `catalog/design-patterns.json` (15 first-party browser concept definitions and eight first-party color palettes, visible tradeoffs and qualitative effort).
+4. **Feasibility/evidence**: `tools/design-select.mjs` rejects candidates violating hard constraints, ranks metadata with explicit score breakdown and builds reproducible shortlists.
+5. **Visual study**: `gallery/` plus localhost-only `tools/serve-gallery.mjs` renders and compares original prototypes. No remote code, tracking, external images, JS/CDN fonts or API required.
+6. **Actual AI selection**: Codex / coding agent reasons over the current destination UI, the evidence packet and preview *when accessible*. It records chosen design + observations/unknowns via `choose`, checked by `verify`. No LLM runtime embedded in this index.
+7. **Native implementation & measurement**: occurs only in the actual consuming repo. This index cannot guarantee CSS demos work in React/JavaFX/Forge/Android.
 
-## Agent query plane
+## Pipeline
 
-`node tools/catalog.mjs validate` validates referential integrity across all files.
+`INSPECT_DESTINATION → IDENTIFY_COMPONENT_NEED → CHECK_RUNTIME → BUILD_BRIEF → HARD_FILTER → METADATA_SHORTLIST → OPTIONAL_VISUAL_REVIEW → AI_DECISION → RECEIPT → NATIVE_PROTOTYPE → REAL_TESTS`
 
-`node tools/catalog.mjs search --genre chat --target react-web --code direct` narrows technical candidates.
+If existing UI already meets the task, terminate at `NO_CHANGE_NEEDED`. If all designs are excluded, report a coverage gap; never silently relax the user's hard constraints.
 
-`node tools/catalog.mjs search --target javafx-desktop --code incompatible` shows sources usable only as visual ideas when `visual=medium/high`.
+## Privacy and security
 
-`node tools/catalog.mjs recommend ai-chat --target javafx-desktop --json` makes a use-case-specific, ranked, structured selection with catalog-handling and technical caveats. Rankings are **candidate ordering**, not approval to copy code.
+The gallery binds only to 127.0.0.1 and serves an explicit allowlist of public, original static files. CSP blocks external scripts and remote connections. Decision records contain task descriptions, not secrets. Do not put private access keys or proprietary app source into the public catalog.
 
-## Separation of concerns
+## Source ownership vs intended platform
 
-1. Reference descriptions and AI metadata here; no bulk third-party source mirroring.
-2. Research target code inside its own project before any UI change.
-3. Use verified licences for local adoption; copying code into a publicly accessible catalog is a **separate** permission question.
-4. If later useful, build a **private** original-design playground or token library. Neither a public product nor a general UI distribution registry is a goal.
-5. Keep costly dependencies optional; catalogs and checks use built-in Node.js only.
+Original demo source is vanilla browser code, and the catalogue marks it as `browser-preview-only`. The designs are **platform-agnostic ideas**, not drop-in packages for eight platforms. The external compatibility matrix refers to *external sources*, which is a separate concept.
 
-## Compatibility semantics
+## Scope control
 
-- `direct`: target runtime matches the library (not automatic license approval).
-- `adapt`: runtime-aware wrapping, conversion, or migration is necessary.
-- `incompatible`: cannot directly import source; visual inspiration may still be valuable.
-- `unverified`: usable source/code is unverified.
-- `tool-only`: agent/developer service, not a runtime component.
-
-Visual value is `high`, `medium`, `low`, or `none` and must **never** override technical code incompatibility.
-
-## Missing capabilities are visible, not hidden
-
-There is no verified directly usable Forge-native component library in this initial catalog. The Fabric-specific LibGui is explicitly incompatible as Forge code but may provide visual/UI layout insights. Add Forge references only after source verification; never infer that another mod loader is supported.
-
-## Re-evaluation policy
-
-Sources can change licences, package names, availability, versions and support. Recheck actual upstream docs before implementation; record changed evidence, dates, and technical assumptions. If the user only asks to evaluate a design and the existing screen is adequate, `NO_CHANGE_NEEDED` is the preferred outcome.
+A design is adopted only if it solves a real requirement. Effort estimates and visual-rubric ratings are approximate; no claim of objective aesthetic superiority. Correctness, usability and runtime safety come first.
