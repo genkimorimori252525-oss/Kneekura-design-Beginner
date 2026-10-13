@@ -1,4 +1,4 @@
-name: Validate design catalog
+name: Validate AI design catalog
 on:
   push:
     paths:
@@ -20,5 +20,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: node tools/catalog.mjs validate
-      - run: node tools/catalog.mjs self-test
+      - name: Validate catalog relations
+        run: node tools/catalog.mjs validate
+      - name: Verify compatibility safety invariants
+        run: node tools/catalog.mjs self-test
+      - name: Smoke-test machine-readable agent recommendation
+        run: node tools/catalog.mjs recommend minecraft-gui --target minecraft-forge-gui --json > /dev/null
+      - name: Smoke-test compatibility-filtered search
+        run: node tools/catalog.mjs search --genre motion --target react-web --code direct --json > /dev/null
