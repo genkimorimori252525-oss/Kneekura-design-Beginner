@@ -55,6 +55,8 @@ PowerShellでは複数行の `\` を使わず、1行で実行してください�
 ## AIが読むファイル
 
 - `AGENTS.md` — 選択手順・プロジェクト優先・過剰修正防止
+- `.agents/skills/kneekura-design-selection/SKILL.md` — Codex向けの選択手順（自動発見できない環境では明示的に読む）
+- `docs/INTEGRATION.md` — 別のにーくら開発リポジトリから参照する方法
 - `docs/SELECTION_ENGINE.md` — 選択エンジンの保証範囲とCLI仕様
 - `docs/AI_WORKFLOW.md` — 既存アプリの調査 → AI選択 → 最小実装 → 検証
 - `catalog/design-patterns.json` — オリジナル15案の特性・長所・弱点・試作品の色
